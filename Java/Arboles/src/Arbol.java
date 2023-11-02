@@ -94,7 +94,7 @@ public class Arbol {
             System.out.println("Hijo derecho ya existe");
         }
     }
-
+// hola probando github
 
     public void insertarHijoIzquierda(Nodo nodo1, Nodo nodo2) {
         if(nodo1.getHijoIzquierda() != null) {
