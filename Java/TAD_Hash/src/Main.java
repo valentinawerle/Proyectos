@@ -1,22 +1,18 @@
 
-/***
- CONSIGNA
- - Crear un TAD Tabla Hash. Las primitivas deben ser: Insertar, Eliminar, Buscar.
- */
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        new InterfazGrafica();
 
-        // INICIALIZACION DE SCANNER
+
+
         Scanner scanner = new Scanner(System.in);
         Tabla t = null;
-        // OPCION MENU PRIMER CONJUNTO
+
         int opcion;
-        // VALIDADOR
+
         boolean creado = false;
         do {
             System.out.println("Ingrese una opcion: \n" +
@@ -28,74 +24,74 @@ public class Main {
                     "6. Salir");
             opcion = scanner.nextInt();
             switch (opcion) {
-                case 1: // CREAR CONJUNTO
+                case 1:
                     if (!creado) {
-                        System.out.println("INGRESAR EL SIZE DE LA TABLA (POTENCIA DE 10): ");
+                        System.out.println("Ingrese el tamaño de la tabla (potencia de 10): ");
                         int sizeT1 = scanner.nextInt();
                         while(!esPotenciaDeDiez(sizeT1)){
-                            System.out.println("DEBE SER UNA POTENCIA DE 10. VOLVER A INGRESAR: ");
+                            System.out.println("El tamaño debe ser una potencia de 10");
                             sizeT1 = scanner.nextInt();
                         }
                         t = new Tabla(sizeT1);
                         creado = true;
                     } else {
-                        System.out.println("CONJUNTO YA CREADO!");
+                        System.out.println("Conjunto creado");
                     }
                     break;
-                case 2: // INGRESAR ELEMENTO A TABLA
+                case 2:
                     if(creado){
-                        System.out.println("INGRESAR ELEMENTO A AÑADIR: ");
-                        System.out.println("NOMBRE: ");
+                        System.out.println("Ingresar elemento: ");
+                        System.out.println("Nombre: ");
                         String nombre = scanner.next();
-                        System.out.println("APELLIDO: ");
+                        System.out.println("Apellido: ");
                         String apellido = scanner.next();
-                        System.out.println("DNI: ");
+                        System.out.println("Dni: ");
                         int dni = scanner.nextInt();
                         Elemento e = new Elemento(nombre, apellido, dni);
                         System.out.println(t.hash(e));
                         t.insertar(e, t.hash(e));
                     } else {
-                        System.out.println("NO SE PUEDE INGRESAR ELEMENTO A UNA TABLA NO CREADA");
+                        System.out.println("No se puede insertar un elemento en una tabla no creada ");
                     }
 
                     break;
-                case 3: // ELIMINAR ELEMENTO DE LA TABLA
+                case 3:
                     if(creado){
-                        System.out.println("INGRESAR EL DNI DEL ELEMENTO A ELIMINAR: ");
+                        System.out.println("Ingresar el dni del elemento a eliminar: ");
                         int dniAEliminar = scanner.nextInt();
                         if(t.eliminar(dniAEliminar)){
-                            System.out.println("ELEMENTO ELIMINADO");
+                            System.out.println("Elemento eliminado");
                         } else {
-                            System.out.println("NO EXISTE EL ELEMENTO A ELIMINAR");
+                            System.out.println("No se ha encontrado el elemento a eliminar");
                         }
                     } else {
-                        System.out.println("NO SE PUEDE ELIMINAR UN ELEMENTO DE UNA TABLA NO CREADA");
+                        System.out.println("No se puede eliminar un elemento en una tabla no creada");
                     }
                     break;
-                case 4: // BUSCAR ELEMENTO
+                case 4:
                     if(creado){
-                        System.out.println("INGRESAR EL DNI DEL ELEMENTO A BUSCAR: ");
+                        System.out.println("Ingresar el dni del elemento a buscar: ");
                         int dniABuscar = scanner.nextInt();
                         int posicionABuscar = t.buscar(dniABuscar);
                         if(posicionABuscar!= -1){
-                            System.out.println("POSICION: " + posicionABuscar);
+                            System.out.println("Posicion " + posicionABuscar);
                         } else {
-                            System.out.println("NO SE HA ENCONTRADO EL ELEMENTO");
+                            System.out.println("No se ha encontrado el elemento a buscar");
                         }
                     } else {
-                        System.out.println("NO SE PUEDE BUSCAR UN ELEMENTO EN UNA TABLA NO CREADA");
+                        System.out.println("No se puede buscar un elemento en una tabla no creada");
                     }
 
                     break;
-                case 5: // IMPRIMIR TABLA
+                case 5:
                     if(creado) {
                         System.out.println(t);
                     } else{
-                        System.out.println("NO SE PUEDE IMPRIMIR UNA TABLA QUE NO ESTA CREADA");
+                        System.out.println("No se puede imprimir, la tabla no existe");
                     }
                     break;
-                case 6: // SALIR AL MENU PRINCIPAL
-                    System.out.println("DE VUELTA AL MENU PRINCIPAL");
+                case 6:
+                    System.out.println("Volviendo al menu principal...");
                     break;
                 default:
                     System.out.println("OPCION INVALIDA");
@@ -105,7 +101,7 @@ public class Main {
     }
 
     public static boolean esPotenciaDeDiez(int numero) {
-        // SI LOG EN BASE DE 10 EN UN INT ENTONCES ES POTENCIA DE 10
+
         double logBaseDiez = Math.log10(numero);
         return logBaseDiez == (int) logBaseDiez;
     }

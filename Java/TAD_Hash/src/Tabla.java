@@ -1,83 +1,82 @@
 
 public class Tabla {
-    // ATRIBUTOS
-    private Elemento tabla[];
-    private int size;
 
-    // CONSTRUCTOR
+    private Elemento tabla[];
+    private int tamanio;
+
+
     public Tabla(int size){
-        this.size = size;
+        this.tamanio = size;
         this.tabla = new Elemento[size];
         for(int i = 0; i < size; i++){
             this.tabla[i] = null;
         }
     }
 
-    // HASH GENERADOR DE POSICION
-    public int hash(Elemento e){
-        int clave = e.getDni(); // USAR DNI COMO CLAVE
-        return clave % size; // DEVUELVE LA POSICION
+
+    public int hash(Elemento elemento1){
+        int clave = elemento1.getDni();
+        return clave % tamanio;
     }
 
-    // METODOS
-    public void insertar(Elemento e, int posicion){
-        // SI NO HAY NADA EN ESA POSICION AGREGAR EL ELEMENTO AHI
+
+    public void insertar(Elemento elemento1, int posicion){
+
         if (tabla[posicion] == null) {
-            tabla[posicion] = e;
+            tabla[posicion] = elemento1;
         } else {
-            // ENCONTRAR NUEVA POSICION Y GUARDAR EN ESA POSICION
+
             int nuevaPosicion = encontrarNuevaPosicion(posicion);
             if (nuevaPosicion != -1) {
-                tabla[nuevaPosicion] = e;
+                tabla[nuevaPosicion] = elemento1;
             } else {
-                // ASIGNAR EN LA POSICION PASADA POR PARAMETRO EL POINTER AL NUEVO ELEMENTO Y TRATARLO COMO NODO
+
                 Elemento actual = tabla[posicion];
                 while (actual.getSiguiente() != null) {
                     actual = actual.getSiguiente();
                 }
-                actual.setSiguiente(e);
+                actual.setSiguiente(elemento1);
             }
         }
     }
 
     public int encontrarNuevaPosicion(int posicion) {
-        // RECORRER LA LISTA BUSCANDO POSICION VACIA
-        for (int i = 0; i < size; i++) {
-            int nuevaPosicion = (posicion + i) % size;
+        for (int i = 0; i < tamanio; i++) {
+            int nuevaPosicion = (posicion + i) % tamanio;
             if (tabla[nuevaPosicion] == null) {
                 return nuevaPosicion;
             }
         }
-        return -1; // DEVOLVER -1 SI NO ENCONTRO NINGUNA POSICION VACIA
+        return -1;
     }
 
     public boolean eliminar(int clave) {
         try {
             if (clave < 0) {
-                throw new Exception("EL DNI NO PUEDE SER NEGATIVO");
+                throw new Exception("El dni no puede ser negativo");
             }
-            // ELEMENTO EN PRIMER NIVEL DE TABLA
+
             for (int i = 0; i < tabla.length; i++) {
-                // TRACKERS
+
                 Elemento actual = tabla[i];
                 Elemento anterior = null;
                 while (actual != null) {
                     if (actual.getDni() == clave) {
                         if (anterior != null) {
-                            // ELIMINAR EL NODO
+
                             anterior.setSiguiente(actual.getSiguiente());
                         } else {
                             tabla[i] = actual.getSiguiente();
                         }
                         return true;
                     }
-                    // ACTUALIZAR PARA SIGUIENTE VUELTA
+
                     anterior = actual;
                     actual = actual.getSiguiente();
                 }
             }
-        } catch (Exception e){
-            System.out.println(e.getMessage());
+        } catch (Exception elemento1){
+            System.out.println(elemento1.getMessage());
         }
         return false;
     }
@@ -85,40 +84,40 @@ public class Tabla {
     public int buscar(int clave){
         try{
             if(clave < 0){
-                throw new Exception("EL DNI NO PUEDE SER NEGATIVO");
+                throw new Exception("El dni no puede ser negativo");
             }
-            // ELEMENTO EN PRIMER NIVEL DE TABLA
+
             for (int i = 0; i < tabla.length; i++) {
                 Elemento actual = tabla[i];
                 while (actual != null) {
                     if (actual.getDni() == clave) {
                         if(actual == tabla[i]){
-                            System.out.println("EL ELEMENTO SE ENCUENTRA EN EL PRIMER NIVEL DE LA TABLA");
+                            System.out.println("El elemento esta en el primer nivel de la tabla");
                         } else {
-                            System.out.println("EL ELEMENTO SE ENCUENTRA EN UN NODO");
+                            System.out.println("El elemento se encuentra en un nodo");
                         }
-                        // DEVOLVER LA POSICION DONDE SE ENCUENTRA
+
                         return i;
                     }
                     actual = actual.getSiguiente();
                 }
             }
-        } catch (Exception e){
-            System.out.println(e.getMessage());
+        } catch (Exception elemento1){
+            System.out.println(elemento1.getMessage());
         }
         return -1;
     }
 
-    // TOSTRING
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < tamanio; i++) {
             sb.append(i).append(": ");
             if (tabla[i] != null) {
                 sb.append(tabla[i].toString());
             } else {
-                sb.append("VACIO");
+                sb.append("vacio");
             }
             sb.append("\n");
         }

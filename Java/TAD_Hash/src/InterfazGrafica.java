@@ -12,33 +12,28 @@ public class InterfazGrafica {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 300);
 
-        // Cambiar el color de fondo de la interfaz
-        frame.getContentPane().setBackground(new Color(255, 182, 193)); // Rosa claro
-
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(6, 2));
-        panel.setBackground(new Color(238, 130, 238)); // Violeta
+        panel.setLayout(new GridLayout(6, 1));
 
-
-
-        panel.setLayout(new GridLayout(6, 2));
-
-        JLabel labelSize = new JLabel("Tamaño de la Tabla (Potencia de 10): ");
-        JTextField textFieldSize = new JTextField();
-        JButton buttonCrearTabla = new JButton("Crear Tabla");
-        JButton buttonInsertar = new JButton("Insertar Elemento");
-        JButton buttonEliminar = new JButton("Eliminar Elemento");
-        JButton buttonBuscar = new JButton("Buscar Elemento");
-        JButton buttonImprimir = new JButton("Imprimir Tabla");
+        JButton buttonCrearTabla = new JButton("1. Crear tabla");
+        JButton buttonInsertar = new JButton("2. Insertar elemento");
+        JButton buttonEliminar = new JButton("3. Eliminar elemento");
+        JButton buttonBuscar = new JButton("4. Buscar elemento");
+        JButton buttonImprimir = new JButton("5. Imprimir tabla");
+        JButton buttonSalir = new JButton("6. Salir");
 
         buttonCrearTabla.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                int size = Integer.parseInt(textFieldSize.getText());
-                if (esPotenciaDeDiez(size)) {
-                    tabla = new Tabla(size);
-                    JOptionPane.showMessageDialog(null, "Tabla creada exitosamente");
+                if (tabla == null) {
+                    int size = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tamaño de la tabla (potencia de 10): "));
+                    if (esPotenciaDeDiez(size)) {
+                        tabla = new Tabla(size);
+                        JOptionPane.showMessageDialog(null, "Tabla creada exitosamente");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "El tamaño debe ser una potencia de 10");
+                    }
                 } else {
-                    JOptionPane.showMessageDialog(null, "El tamaño debe ser una potencia de 10");
+                    JOptionPane.showMessageDialog(null, "La tabla ya ha sido creada");
                 }
             }
         });
@@ -99,13 +94,18 @@ public class InterfazGrafica {
             }
         });
 
-        panel.add(labelSize);
-        panel.add(textFieldSize);
+        buttonSalir.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
         panel.add(buttonCrearTabla);
         panel.add(buttonInsertar);
         panel.add(buttonEliminar);
         panel.add(buttonBuscar);
         panel.add(buttonImprimir);
+        panel.add(buttonSalir);
 
         frame.getContentPane().add(panel);
         frame.setVisible(true);
