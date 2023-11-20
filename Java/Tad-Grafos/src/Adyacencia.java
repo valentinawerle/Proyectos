@@ -116,7 +116,13 @@ public class Adyacencia {
     }
 
     public boolean existeMatriz() {
-        return matriz != null;
+        if (matriz == null) {
+            return false;
+        } else {
+            return true;
+        }
+
+
     }
 
 

@@ -24,7 +24,7 @@ public class Main {
 
             switch (opcionMenu) {
                 case 1:
-                    if (!A1.existeMatriz()) {
+
                         System.out.println("Ingrese la cantidad de Nodos que tiene la Matriz que intenta cargar");
                         cantNodos = scanner.nextInt();
 
@@ -43,9 +43,7 @@ public class Main {
                                 }
                             }
                         }
-                    } else {
-                        System.out.println("Ya está creada la Matriz.");
-                    }
+
                     break;
                 case 2:
                     if (A1.existeMatriz()) {
