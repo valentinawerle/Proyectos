@@ -48,7 +48,6 @@ public class Arbol {
     }
 
     public String padre(Nodo nodo1) {
-        public String padre (Nodo nodo1){
             Nodo aux = nodo1.getPadre();
             if (aux == null) {
                 return " NODO_RAIZ";
@@ -56,7 +55,7 @@ public class Arbol {
                 return "Padre:" + aux;
             }
         }
-    }
+
     public String hijoDerecho(Nodo nodo1){
             Nodo aux = nodo1.getHijoDerecha();
             if (aux == null) {
@@ -94,7 +93,7 @@ public class Arbol {
             System.out.println("Hijo derecho ya existe");
         }
     }
-// hola probando github
+
 
     public void insertarHijoIzquierda(Nodo nodo1, Nodo nodo2) {
         if(nodo1.getHijoIzquierda() != null) {
@@ -105,6 +104,10 @@ public class Arbol {
             System.out.println("Hijo izquierdo ya existe");
         }
     }
+
+
+
+
 
 
 
