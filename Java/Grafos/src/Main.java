@@ -25,21 +25,25 @@ public class Main {
             switch (opcionMenu) {
                 case 1:
 
-                        System.out.println("Ingrese la cantidad de Nodos que tiene la Matriz que intenta cargar");
-                        cantNodos = scanner.nextInt();
+                    System.out.println("Ingrese la cantidad de Nodos que tiene la Matriz que intenta cargar");
+                    cantNodos = scanner.nextInt();
 
-                        A1 = new Adyacencia(cantNodos);
-                        System.out.println("Carguemos los valores de tu tabla de Adyacencia");
-                        String valor;
+                    A1 = new Adyacencia(cantNodos);
+                    System.out.println("Carguemos los valores de tu tabla de Adyacencia");
+                    String valor;
 
-                        for (int x = 1; x <= cantNodos; x++) {
-                            for (int y = 1; y <= cantNodos; y++) {
-                                if (!A1.existe(x - 1, y - 1)) {
-                                    System.out.println("Ingrese el Valor de  la posicion: [" + y + "]/[" + x + "]");
-                                    valor = scanner.next();
+                    for (int x = 1; x <= cantNodos; x++) {
+                        for (int y = 1; y <= cantNodos; y++) {
+                            if (!A1.existe(x - 1, y - 1)) {
+                                System.out.println("Ingrese el Valor de  la posicion: [" + y + "]/[" + x + "]");
+                                valor = scanner.next();
+                                if(x != y){
                                     A1.cargar(valor, x - 1, y - 1);
                                     A1.cargar(valor, y - 1, x - 1);
-                                    A1.imprimir();
+                                }else{
+                                    A1.cargar(valor, x - 1, y - 1);
+                                }
+                                A1.imprimir();
                                 }
                             }
                         }
@@ -96,6 +100,33 @@ public class Main {
                         System.out.println("La matriz no se ha inicializado.");
                     }
                     break;
+
+                case 7:
+                    if (A1.existeMatriz()) {
+
+                        A1.AgregarNodo();
+                        cantNodos = A1.getTamanio();
+                        for (int x = 1; x <= cantNodos; x++) {
+                            if (!A1.existe(x - 1, cantNodos - 1)) {
+                                System.out.println("Ingrese el Valor de  la posicion: [" + x + "]/[" + cantNodos + "]");
+                                valor = scanner.next();
+                                if(x != cantNodos){
+                                    A1.cargar(valor, x - 1, cantNodos - 1);
+                                    A1.cargar(valor, cantNodos - 1, x - 1);
+                                }else{
+                                    A1.cargar(valor, x - 1, cantNodos - 1);
+                                }
+                                A1.imprimir();
+                            }
+                        }
+
+
+
+                    } else {
+                        System.out.println("La matriz no se ha inicializado.");
+                    }
+                    break;
+
                 case 8:
                     System.out.println("Saludos!");
                     break;

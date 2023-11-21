@@ -1,21 +1,29 @@
 import java.util.ArrayList;
 
 public class Adyacencia {
+
+    //Atributos
     private String [][] matriz;
     private int tamanio;
+
+    public int getTamanio() {
+        return tamanio;
+    }
+
+    //Constructor
     public Adyacencia (int tamanio){
 
         matriz = new String [tamanio][tamanio];
         this.tamanio = tamanio;
     }
 
-    public void cargar (String valor, int x, int y){
+
+    public void cargar (String valor, int x, int y){  //x = fila, y = columna
 
         if(!existe(x,y)){
             matriz[x][y] = valor;
-
-        }
-        else{
+        }else{
+            System.out.println("Ya existe un valor en esa posicion");
 
         }
 
@@ -24,8 +32,9 @@ public class Adyacencia {
     public boolean existe(int x, int y){
         if(matriz[x][y] == null){
             return false;
+        }else {
+            return true;
         }
-        return true;
     }
     public void imprimir() {
         for (int i = 0; i < tamanio; i++) {
@@ -46,29 +55,29 @@ public class Adyacencia {
         System.out.println("+");
     }
 
-    public void BuscadorConexiones(int nodoFila){
-        int fila = nodoFila - 1;
+    public void BuscadorConexiones(int nodoFila) {
+        int fila = nodoFila - 1; // Se resta 1 porque los índices de la matriz empiezan en 0
 
-        if (fila != -1) {
-            ArrayList<Integer> conecciones = new ArrayList<>();
-            ArrayList<String> conectores = new ArrayList<>();
+        if (fila != -1) { // Verifica si el nodoFila existe en la matriz
+            ArrayList<Integer> conecciones = new ArrayList<>(); // Crea una lista para almacenar las conexiones (números de columna)
+            ArrayList<String> conectores = new ArrayList<>(); // Crea una lista para almacenar los conectores
 
-            for (int j = 0; j < tamanio; j++) {
-                String elemento = matriz[fila][j];
-                if (elemento != null && elemento.startsWith("e")) {
-                    conecciones.add(j + 1);
-                    conectores.add(elemento);
+            for (int j = 0; j < tamanio; j++) { // Itera sobre las columnas de la fila dada en la matriz
+                String elemento = matriz[fila][j]; // Obtiene el elemento en la posición fila, columna
+                if (elemento != null && elemento.startsWith("e")) { // Verifica si el elemento no es nulo y comienza con "e"
+                    conecciones.add(j + 1); // Agrega el número de columna (más 1, ya que los índices comienzan en 0)
+                    conectores.add(elemento); // Agrega el elemento (conector) a la lista de conectores
                 }
             }
 
             // Imprimir los elementos encontrados
-            if (!conecciones.isEmpty()) {
-                System.out.println("Con quien esta conectado el nodo " + nodoFila + ":\n");
-                for (int i = 0; i< conecciones.size(); i++ ) {
-                    System.out.println("Con el nodo: " + conecciones.get(i) + " Mediante el conector: " + conectores.get(i) );
+            if (!conecciones.isEmpty()) { // Verifica si se encontraron conexiones
+                System.out.println("Con quien está conectado el nodo " + nodoFila + ":\n");
+                for (int i = 0; i < conecciones.size(); i++) { // Itera sobre la lista de conexiones
+                    System.out.println("Con el nodo: " + conecciones.get(i) + " Mediante el conector: " + conectores.get(i));
                 }
             } else {
-                System.out.println("No se encontraron conecciones con otros nodos " + nodoFila);
+                System.out.println("No se encontraron conexiones con otros nodos desde el nodo " + nodoFila);
             }
         } else {
             System.out.println("El nodo " + nodoFila + " no existe en la matriz.");
@@ -114,6 +123,20 @@ public class Adyacencia {
         imprimir();
 
     }
+
+    public void AgregarNodo() {
+        String [][] matrizAux = new String [tamanio + 1][tamanio + 1];
+        for (int i = 0; i < tamanio; i++) {
+            for (int j = 0; j < tamanio; j++) {
+                matrizAux[i][j] = matriz[i][j];
+            }
+        }
+        matriz = matrizAux;
+        tamanio++;
+        System.out.println("Nodo agregado con exito");
+        imprimir();
+    }
+
 
     public boolean existeMatriz() {
         if (matriz == null) {
