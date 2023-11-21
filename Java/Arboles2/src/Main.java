@@ -1,114 +1,17 @@
-
-import java.util.Scanner;
+// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
+// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        ArbolBinario arbol = new ArbolBinario();
-        Scanner scanner = new Scanner(System.in);
-        boolean creado = false;
+        // Press Alt+Intro with your caret at the highlighted text to see how
+        // IntelliJ IDEA suggests fixing it.
+        System.out.printf("Hello and welcome!");
 
-        while (true) {
-            System.out.println();
-            System.out.println("---------------------------");
-            System.out.println("MENU DEL ARBOL ABB");
-            System.out.println("---------------------------");
-            System.out.println("[1] Crear arbol");
-            System.out.println("[2] Agregar Hoja");
-            System.out.println("[3] Buscar Elemento");
-            System.out.println("[4] Mostrar Preorden");
-            System.out.println("[5] Mostrar Inorden");
-            System.out.println("[6] Mostrar Postorden");
-            System.out.println("[7] Eliminar Nodo");
-            System.out.println("[0] Salir");
-            System.out.println();
+        // Press Mayús+F10 or click the green arrow button in the gutter to run the code.
+        for (int i = 1; i <= 5; i++) {
 
-            System.out.print("Seleccione una opcion: ");
-            String opcion = scanner.nextLine();
-
-            switch (opcion) {
-                case "0":
-                    System.exit(0);
-                    break;
-
-                case "1":
-                    if (!creado) {
-                        System.out.print("Ingrese el valor de la raiz principal: ");
-                        int valorRaiz = scanner.nextInt();
-                        arbol.insertar(valorRaiz);
-                        creado = true;
-                    } else {
-                        System.out.println("¡El arbol ya ha sido creado!");
-                    }
-                    break;
-
-                case "2":
-                    if (!creado) {
-                        System.out.println("¡Primero crea el arbol!");
-                    } else {
-                        System.out.print("Ingrese el valor de la hoja a agregar: ");
-                        int valorHoja = scanner.nextInt();
-                        arbol.insertar(valorHoja);
-                    }
-                    break;
-
-                case "3":
-                    if (!creado) {
-                        System.out.println("¡Primero crea el arbol!");
-                    } else {
-                        System.out.print("Ingrese un valor para buscar en el arbol: ");
-                        int valorBusqueda = scanner.nextInt();
-                        NodoArbol resultadoBusqueda = arbol.buscar(valorBusqueda);
-                        if (resultadoBusqueda != null)
-                            System.out.println("El nodo " + valorBusqueda + " fue encontrado en el arbol.");
-                        else
-                            System.out.println("El nodo " + valorBusqueda + " no fue encontrado en el arbol.");
-                    }
-                    break;
-
-                case "4":
-                    if (!creado) {
-                        System.out.println("¡Primero crea el arbol!");
-                    } else {
-                        System.out.println("Recorrido en preorden:");
-                        arbol.preorden();
-                    }
-                    break;
-
-                case "5":
-                    if (!creado) {
-                        System.out.println("¡Primero crea el arbol!");
-                    } else {
-                        System.out.println("Recorrido en inorden:");
-                        arbol.inorden();
-                    }
-                    break;
-
-                case "6":
-                    if (!creado) {
-                        System.out.println("¡Primero crea el arbol!");
-                    } else {
-                        System.out.println("Recorrido en postorden:");
-                        arbol.postorden();
-                    }
-                    break;
-
-                case "7":
-                    if (!creado) {
-                        System.out.println("¡Primero crea el arbol!");
-                    } else {
-                        System.out.print("Ingrese el valor del nodo a eliminar: ");
-                        int valorEliminar = scanner.nextInt();
-                        arbol.eliminarNodo(valorEliminar);
-                        System.out.println("Nodo con valor " + valorEliminar + " eliminado.");
-                    }
-                    break;
-
-
-                default:
-                    System.out.println("Opcion no valida. Intente de nuevo.");
-            }
-
-            scanner.nextLine();  //enter Consume el salto de línea
-
+            // Press Mayús+F9 to start debugging your code. We have set one breakpoint
+            // for you, but you can always add more by pressing Ctrl+F8.
+            System.out.println("i = " + i);
         }
     }
 }

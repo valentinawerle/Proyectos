@@ -1,12 +1,7 @@
-
-
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-
-
 
         Scanner scanner = new Scanner(System.in);
         Tabla t = null;
@@ -100,7 +95,7 @@ public class Main {
         } while (opcion != 6);
     }
 
-    public static boolean esPotenciaDeDiez(int numero) {
+    public static boolean esPotenciaDeDiez(int numero) { //Metodo para verificar si un numero es potencia de 10
 
         double logBaseDiez = Math.log10(numero);
         return logBaseDiez == (int) logBaseDiez;
