@@ -1,18 +1,14 @@
-import java.util.Scanner;
-public class NodoArbol {
 
-    //Atributos
+
+
+class NodoArbol {
     int dato;
-    NodoArbol izquierdo;
-    NodoArbol derecho;
+    NodoArbol izquierda;
+    NodoArbol derecha;
 
-    //Constructor
     public NodoArbol(int dato) {
         this.dato = dato;
-        this.izquierdo = null;
-        this.derecho = null;
+        this.izquierda = null;
+        this.derecha = null;
     }
 }
-
-
-
