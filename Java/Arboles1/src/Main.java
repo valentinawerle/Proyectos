@@ -1,17 +1,44 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Intro with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        ArbolBinario arbol = new ArbolBinario();
+        Scanner scanner = new Scanner(System.in);
 
-        // Press Mayús+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        // Obtener valores a insertar
+        System.out.print("Ingrese los valores separados por espacios para insertar en el árbol: ");
+        String[] valores = scanner.nextLine().split(" ");
 
-            // Press Mayús+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        // Insertar valores en el árbol
+        for (String valor : valores) {
+            try {
+                int dato = Integer.parseInt(valor);
+                arbol.insertar(dato);
+            } catch (NumberFormatException e) {
+                System.out.println("Valor no válido: " + valor);
+            }
         }
+
+        // Realizar recorridos
+        System.out.println("Recorrido en inorden:");
+        arbol.recorridoInorden();
+        System.out.println();
+
+        System.out.println("Recorrido en preorden:");
+        arbol.recorridoPreorden();
+        System.out.println();
+
+        System.out.println("Recorrido en postorden:");
+        arbol.recorridoPostorden();
+        System.out.println();
+
+        // Buscar un valor
+        System.out.print("Ingrese un valor para buscar en el árbol: ");
+        int datoBuscado = scanner.nextInt();
+        NodoArbol resultadoBusqueda = arbol.buscar(datoBuscado);
+        if (resultadoBusqueda != null)
+            System.out.println("El nodo " + datoBuscado + " fue encontrado en el árbol.");
+        else
+            System.out.println("El nodo " + datoBuscado + " no fue encontrado en el árbol.");
     }
 }
