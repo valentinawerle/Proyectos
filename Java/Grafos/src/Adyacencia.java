@@ -64,7 +64,7 @@ public class Adyacencia {
 
             for (int j = 0; j < tamanio; j++) { // Itera sobre las columnas de la fila dada en la matriz
                 String elemento = matriz[fila][j]; // Obtiene el elemento en la posición fila, columna
-                if (elemento != null && elemento.startsWith("e")) { // Verifica si el elemento no es nulo y comienza con "e"
+                if (elemento != null && !elemento.startsWith("0")) { // Verifica si el elemento no es nulo y comienza con "e"
                     conecciones.add(j + 1); // Agrega el número de columna (más 1, ya que los índices comienzan en 0)
                     conectores.add(elemento); // Agrega el elemento (conector) a la lista de conectores
                 }
