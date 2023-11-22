@@ -23,15 +23,15 @@ public class Main extends JFrame {
 
         menuTextArea = new JTextArea(
                 "MENU DEL ARBOL ABB\n" +
-                "---------------------------\n" +
-                "[1] Crear arbol\n" +
-                "[2] Agregar Hoja\n" +
-                "[3] Buscar Elemento\n" +
-                "[4] Mostrar Preorden\n" +
-                "[5] Mostrar Inorden\n" +
-                "[6] Mostrar Postorden\n" +
-                "[7] Eliminar Nodo\n" +
-                "[0] Salir\n"
+                        "---------------------------\n" +
+                        "[1] Crear arbol\n" +
+                        "[2] Agregar Hoja\n" +
+                        "[3] Buscar Elemento\n" +
+                        "[4] Mostrar Preorden\n" +
+                        "[5] Mostrar Inorden\n" +
+                        "[6] Mostrar Postorden\n" +
+                        "[7] Eliminar Nodo\n" +
+                        "[0] Salir\n"
         );
         menuTextArea.setEditable(false);
         menuTextArea.setPreferredSize(new Dimension(380, 170));

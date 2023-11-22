@@ -1,6 +1,5 @@
 package Arboles3;
 
-import Arboles3.NodoArbol;
 
 class NodoArbol {
     int dato;
