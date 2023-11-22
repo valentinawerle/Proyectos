@@ -7,10 +7,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int cantNodos = -1;
         Adyacencia A1= null;
-        int opcionMenu = 0;
+        String opcionMenu = "0";
 
 
-        while(opcionMenu != 8){
+        while(opcionMenu != "8"){
 
             System.out.println("\nIngrese lo que desea hacer:\n" +
                     "1- Cargar matriz de Adyacencia\n" +
@@ -21,10 +21,10 @@ public class Main {
                     "6- Eliminar Nodo\n" +
                     "7- Agregar Nodo\n" +
                     "8- salir");
-            opcionMenu = scanner.nextInt();
+            opcionMenu = scanner.next();
 
             switch (opcionMenu) {
-                case 1:
+                case "1":
                     boolean inputCantNodo = false; // Variable para verificar si la cantidad de nodos es válida
                     boolean inputValor;
                     while(!inputCantNodo) {
@@ -71,14 +71,14 @@ public class Main {
                         }
 
                     break;
-                case 2:
+                case "2":
                     if (A1.existeMatriz()) {
                         A1.imprimir();
                     } else {
                         System.out.println("La matriz no se ha inicializado.");
                     }
                     break;
-                case 3:
+                case "3":
                     if (A1.existeMatriz()) {
                         int nodoBusqueda = -1;
                         boolean inputNodoBusqueda = false; // Variable para verificar si el nodoBusqueda es válido
@@ -101,7 +101,7 @@ public class Main {
                         System.out.println("La matriz no se ha inicializado.");
                     }
                     break;
-                case 4:
+                case "4":
                     if (A1.existeMatriz()) {
                         A1.vaciar();
                         System.out.println("Matriz eliminada.");
@@ -109,7 +109,7 @@ public class Main {
                         System.out.println("La matriz no se ha inicializado.");
                     }
                     break;
-                case 5:
+                case "5":
                     if (A1.existeMatriz()) { //Si la matriz existe
                         int x;
                         int y;
@@ -126,7 +126,7 @@ public class Main {
                         System.out.println("La matriz no se ha inicializado.");
                     }
                     break;
-                case 6:
+                case "6":
                     if (A1.existeMatriz()) {
                         int nodoAeliminar;
                         System.out.println("Ingrese el nodo que desea eliminar:");
@@ -137,7 +137,7 @@ public class Main {
                     }
                     break;
 
-                case 7:
+                case "7":
                     if (A1.existeMatriz()) {
 
                         A1.AgregarNodo(); //Se agrega un nodo a la matriz
@@ -163,7 +163,7 @@ public class Main {
                     }
                     break;
 
-                case 8:
+                case "8":
                     System.out.println("Saludos!");
                     break;
 
