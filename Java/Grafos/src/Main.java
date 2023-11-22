@@ -27,6 +27,7 @@ public class Main {
 
                     System.out.println("Ingrese la cantidad de Nodos que tiene la Matriz que intenta cargar");
                     cantNodos = scanner.nextInt();
+                    
 
                     A1 = new Adyacencia(cantNodos);
                     System.out.println("Carguemos los valores de tu tabla de Adyacencia");
@@ -37,11 +38,11 @@ public class Main {
                             if (!A1.existe(x - 1, y - 1)) {
                                 System.out.println("Ingrese el Valor de  la posicion: [" + y + "]/[" + x + "]");
                                 valor = scanner.next();
-                                if(x != y){
-                                    A1.cargar(valor, x - 1, y - 1);
-                                    A1.cargar(valor, y - 1, x - 1);
-                                }else{
-                                    A1.cargar(valor, x - 1, y - 1);
+                                if(x != y){ //Si no es la diagonal principal
+                                    A1.cargar(valor, x - 1, y - 1); //Carga el valor en la posicion [x]/[y]
+                                    A1.cargar(valor, y - 1, x - 1); //Carga el valor en la posicion [y]/[x]
+                                }else{ //Si es la diagonal principal
+                                    A1.cargar(valor, x - 1, y - 1); //Carga el valor en la posicion [x]/[y]
                                 }
                                 A1.imprimir();
                                 }

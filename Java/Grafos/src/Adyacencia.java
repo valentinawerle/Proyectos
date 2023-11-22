@@ -39,18 +39,18 @@ public class Adyacencia {
     public void imprimir() {
         for (int i = 0; i < tamanio; i++) {
             for (int j = 0; j < tamanio; j++) {
-                System.out.print("+----"); // Línea horizontal de separación
+                System.out.print("+-------"); // Línea horizontal de separación
             }
             System.out.println("+");
 
             for (int j = 0; j < tamanio; j++) {
-                System.out.printf("| %3s", matriz[i][j]); // Valor con separador vertical y ancho mínimo de 3 caracteres
+                System.out.printf("| %6s", matriz[i][j]); // Valor con separador vertical y ancho mínimo de 3 caracteres
             }
             System.out.println("|");
         }
 
         for (int j = 0; j < tamanio; j++) {
-            System.out.print("+----"); // Línea horizontal de separación en la parte inferior
+            System.out.print("+-------"); // Línea horizontal de separación en la parte inferior
         }
         System.out.println("+");
     }
