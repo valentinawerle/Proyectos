@@ -12,11 +12,9 @@ public class ManejoArchivos {
             PrintWriter salida = new PrintWriter(archivo);
             salida.close();
             System.out.println("El archivo se ha creado correctamente");
+
         } catch (FileNotFoundException ex) {
            ex.printStackTrace(System.out);
         }
-
-
     }
-
 }
