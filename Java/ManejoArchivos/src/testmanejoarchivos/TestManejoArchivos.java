@@ -8,7 +8,8 @@ public class TestManejoArchivos {
 
         var nombreArchivo = "prueba.txt";
         //crearArchivo(nombreArchivo);
-        escribirArchivo(nombreArchivo, "Hola desde Java");
+        escribirArchivo(nombreArchivo, "Adios");
+        agregarArchivo(nombreArchivo, "Hola, desde Java");
 
 
 
