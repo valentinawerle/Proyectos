@@ -5,6 +5,7 @@ public class CatalogoPeliculas {
 
     public void agregarPelicula(String nombrePelicula){
 
+
     }
 
     public void listarPeliculas(){

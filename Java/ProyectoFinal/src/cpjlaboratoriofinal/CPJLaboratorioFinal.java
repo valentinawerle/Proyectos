@@ -11,7 +11,7 @@ public class CPJLaboratorioFinal {
 
         Scanner scanner = new Scanner(System.in);
         int opcion;
-        String nombreArchivo;
+        String nombreArchivo =
         String nombrePelicula;
 
         System.out.println("Elija una opcion: \n"
@@ -41,11 +41,11 @@ public class CPJLaboratorioFinal {
 
                 break;
             case 3:
-                System.out.println("Ingrese el nombre del archivo a crear");
+                System.out.println();
                 nombreArchivo = scanner.nextLine();
                 break;
             case 4:
-                System.out.println("Ingrese el nombre del archivo a crear");
+                System.out.println("");
                 nombreArchivo = scanner.nextLine();
                 break;
             case 0:
