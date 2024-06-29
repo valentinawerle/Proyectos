@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Plotter</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Monitoreo de Luz</h1>
+    <div id="plot"></div>
+    <script>
+    function fetch_plot() {
+        fetch('/plot.png')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('plot').innerHTML = html;
+            });
+    }
+    
+    setInterval(fetch_plot, 10000);
+    fetch_plot();
+    </script>
+</body>
+</html>
