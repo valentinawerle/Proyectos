@@ -4,4 +4,4 @@ const hero = {
     name: "Ironman",
     age: 50
 };
-console.log(msg);
+console.log(hero.age + 1);

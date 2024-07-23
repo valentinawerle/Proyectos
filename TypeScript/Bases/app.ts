@@ -8,4 +8,4 @@ const hero = {
 
 }
 
-console.log(msg)
+console.log(hero.age + 1)
