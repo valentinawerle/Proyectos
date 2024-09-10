@@ -1,151 +1,60 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial scale= 1.0">
-<title>Tutoriales</title>
-
-<style>
-
-body{
-
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f5f5f5;
-
-}
-
-.course-content{
-
-max-width: 800px;
-margin: 0 auto;
-background-color: white;
-padding: 20px;
-border-radius: 8px;
-box-shadow: 0, 2px, 8px rgba(0, 0, 0, 0.1);
-
-}
-
-h1 {
-            font-size: 24px; /* Tamaño de fuente del título */
-            color: #333; /* Color de texto gris oscuro */
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index de Proyectos</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
-        
-        /* Estilos para cada sección del curso */
-        .section {
-            margin-bottom: 20px; /* Espacio debajo de cada sección */
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
-        
-        /* Estilos para los títulos de las secciones */
-        .section-title {
-            font-size: 18px; /* Tamaño de la fuente del título de sección */
-            background-color: #f0f0f0; /* Fondo gris claro para los títulos */
-            padding: 10px; /* Relleno dentro del título de sección */
-            border-radius: 4px; /* Bordes ligeramente redondeados */
-            cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre el título */
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
         }
-        
-        /* Efecto al pasar el cursor sobre los títulos de sección */
-        .section-title:hover {
-            background-color: #ddd; /* Cambia el fondo a un gris más oscuro cuando se pasa el cursor */
+
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #1260b5;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-        
-        /* Estilos para la lista de lecciones en cada sección */
-        .lesson-list {
-            margin: 0; /* Elimina márgenes de la lista */
-            padding: 0; /* Elimina relleno de la lista */
-            list-style: none; /* Elimina los puntos de la lista (formato sin viñetas) */
-            display: none; /* Oculta las lecciones por defecto */
-        }
-        
-        /* Estilos para cada lección en la lista */
-        .lesson {
-            padding: 10px 0; /* Relleno arriba y abajo de cada lección */
-            display: flex; /* Usa flexbox para alinear elementos */
-            justify-content: space-between; /* Separa el título y la duración de la lección */
-            border-bottom: 1px solid #eee; /* Línea separadora entre lecciones */
-        }
-        
-        /* Estilos para el título de cada lección (enlace) */
-        .lesson-title {
-            color: #1260b5; /* Color azul para los enlaces */
-            text-decoration: none; /* Elimina el subrayado de los enlaces */
-        }
-        
-        /* Estilos para la duración de cada lección */
-        .lesson-duration {
-            color: #888; /* Color gris claro para la duración de la lección */
-        }
-        
-        /* Muestra las lecciones cuando la sección está activa */
-        .active + .lesson-list {
-            display: block; /* Cambia el display a bloque, haciendo visible la lista de lecciones */
+
+        .btn:hover {
+            background-color: #0d4a8a;
         }
     </style>
 </head>
 <body>
 
-<div class="course-content">
-    <h1>Tutoriales Armarius</h1> <!-- Título principal de la página -->
-
-    <!-- Primera sección del curso -->
-    <div class="section">
-        <div class="section-title" onclick="toggleSection(this)">Introducción</div> <!-- Título de la sección, se puede hacer clic para desplegar -->
-        <ul class="lesson-list"> <!-- Lista de lecciones (oculta por defecto) -->
-            <li class="lesson">
-                <a href="https://www.youtube.com/watch?v=video_id1" class="lesson-title" target="_blank">Introducción</a> <!-- Enlace a la lección en YouTube -->
-                <span class="lesson-duration">00:00</span> <!-- Duración de la lección -->
-            </li>
-        </ul>
-    </div>
-
-    <!-- Segunda sección del curso -->
-    <div class="section">
-        <div class="section-title" onclick="toggleSection(this)">Dibujar un armario</div> <!-- Título de la sección -->
-        <ul class="lesson-list"> <!-- Lista de lecciones -->
-            <li class="lesson">
-                <a href="https://www.youtube.com/watch?v=video_id2" class="lesson-title" target="_blank">Dibujando muros</a> <!-- Lección 1 -->
-                <span class="lesson-duration">05:52</span> <!-- Duración de la lección 1 -->
-            </li>
-            <li class="lesson">
-                <a href="https://www.youtube.com/watch?v=video_id3" class="lesson-title" target="_blank">Encuentro de muros</a> <!-- Lección 2 -->
-                <span class="lesson-duration">03:50</span> <!-- Duración de la lección 2 -->
-            </li>
-        </ul>
-    </div>
-
-    <!-- Tercera sección del curso -->
-    <div class="section">
-        <div class="section-title" onclick="toggleSection(this)">Espacio interior</div> <!-- Título de la sección -->
-        <ul class="lesson-list"> <!-- Lista de lecciones -->
-            <li class="lesson">
-                <a href="https://www.youtube.com/watch?v=video_id4" class="lesson-title" target="_blank">Divisores</a> <!-- Lección 1 -->
-                <span class="lesson-duration">10:00</span> <!-- Duración de la lección 1 -->
-            </li>
-            <!-- Más lecciones aquí -->
-        </ul>
-    </div>
-
-    <!-- Repite este bloque para las demás secciones -->
-
+<div class="container">
+    <h1>Proyectos</h1>
+    <a href="armarius.html" class="btn">Armarius</a> 
+    <a href="focus3d.html" class="btn">Focus 3D</a> 
+    <a href="leptonray.html" class="btn">Lepton Ray</a> 
 </div>
 
-<script>
-    /* Función JavaScript para alternar (mostrar/ocultar) la lista de lecciones */
-    function toggleSection(element) {
-        element.classList.toggle('active'); /* Añade o elimina la clase 'active', que muestra la lista */
-    }
-</script>
-
 </body>
-</html>
-
-
-</style>
-
-
-
-
 </html>
