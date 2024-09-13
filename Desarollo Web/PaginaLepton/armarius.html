@@ -79,45 +79,6 @@
             color: #888;
         }
 
-        /* Nuevo estilo para la sección "Implementación" */
-        .implementation {
-            margin-bottom: 30px;
-            padding: 15px;
-            background-color: #f9fafb;
-            border-left: 4px solid #1260b5;
-            border-radius: 8px;
-        }
-
-        .implementation ul {
-            padding-left: 0;
-            list-style-type: none;
-        }
-
-        .implementation ul li {
-            margin-bottom: 10px;
-        }
-
-        .implementation ul li a {
-            text-decoration: none;
-            color: #1260b5;
-            font-weight: 500;
-            display: inline-block;
-            padding: 5px 0;
-        }
-
-        .implementation ul li a:hover {
-            text-decoration: underline;
-        }
-
-        .implementation ul li::before {
-            content: "•";
-            color: #1260b5;
-            margin-right: 8px;
-            font-size: 20px;
-            line-height: 20px;
-            vertical-align: middle;
-        }
-
         /* Estilos para pantalla pequeña */
         @media (max-width: 600px) {
             .course-content {
@@ -141,6 +102,16 @@
         .active .lesson-list {
             display: block;
         }
+
+        hr {
+    border: none;
+    height: 2px;
+    background-color: #ccc; /* Puedes cambiar el color */
+    margin: 20px 0; /* Espaciado opcional */
+    }
+
+
+
     </style>
 </head>
 
@@ -153,11 +124,21 @@
         <div class="implementation">
             <h2>Implementación</h2>
             <ul>
-                <li><a href="enlace1.pdf" target="_blank">Guía de instalación</a></li>
-                <li><a href="enlace2.pdf" target="_blank">Configuración inicial</a></li>
-                <li><a href="enlace3.pdf" target="_blank">Optimización del sistema</a></li>
+                <li><a href="https://drive.google.com/file/d/1WGrSaCgA9GaF-TuxMk0jHH86ekvTX5os/view?usp=sharing" target="_blank">Guía de instalación</a></li>
+                <li><a href="https://drive.google.com/file/d/1esM1CzHU0sS8oXH_hCIqH9bFMrzU-CxR/view?usp=sharing" target="_blank">Guia base de datos</a></li>
+                <li><a href="https://drive.google.com/file/d/1XwJQ7FQy9sresWMZwcISvKnADTbGED0J/view?usp=sharing" target="_blank">Guia sistema constructivo</a></li>
+                <li><a href="https://drive.google.com/file/d/1LfCoR06BN7Foo1q22OtgBJzmxtn3P9oW/view?usp=sharing" target="_blank">Configuración tapacantos</a></li>
+                <li><a href="https://drive.google.com/file/d/1X33PlS2EbTMzF9xfBpn4Jd3-Twnugy9U/view?usp=sharing" target="_blank">Manual Carga de guia de cajón </a></li>
+            </ul>
+            </ul>
             </ul>
         </div>
+
+       <!-- Línea divisora -->
+    <hr>
+
+        <h2>Manejo del programa</h2>
+        
 
         <!-- Secciones del curso -->
         <div class="section" onclick="toggleSection(this)">
@@ -205,70 +186,71 @@
                 </li>
             </ul>
         </div>
-        <div class="section">
-            <div class="section-title" onclick="toggleSection(this)">Dibujar un armario</div> 
-            <ul class="lesson-list"> 
+
+        <div class="section" onclick="toggleSection(this)">
+            <div class="section-title">Dibujar un armario</div>
+            <ul class="lesson-list">
                 <li class="lesson">
-                    <a href="https://youtu.be/H6gaPUgGpOM" class="lesson-title" target="_blank">Columnas</a> 
-                    <span class="lesson-duration">03:03</span> 
+                    <a href="https://youtu.be/H6gaPUgGpOM" class="lesson-title" target="_blank">Columnas</a>
+                    <span class="lesson-duration">03:03</span>
                 </li>
                 <li class="lesson">
-                    <a href="https://youtu.be/YJ8UVoRKj9o" class="lesson-title" target="_blank">Interface</a> 
-                    <span class="lesson-duration">02:24</span> 
+                    <a href="https://youtu.be/YJ8UVoRKj9o" class="lesson-title" target="_blank">Interface</a>
+                    <span class="lesson-duration">02:24</span>
                 </li>
                 <li class="lesson">
-                    <a href="https://youtu.be/hPvAm5HxkI8" class="lesson-title" target="_blank">Materiales</a> 
-                    <span class="lesson-duration">03:11</span> 
+                    <a href="https://youtu.be/hPvAm5HxkI8" class="lesson-title" target="_blank">Materiales</a>
+                    <span class="lesson-duration">03:11</span>
                 </li>
                 <li class="lesson">
-                    <a href="https://youtu.be/s9f5oL0LKhA" class="lesson-title" target="_blank">Medidas generales</a> 
-                    <span class="lesson-duration">05:12</span> 
+                    <a href="https://youtu.be/s9f5oL0LKhA" class="lesson-title" target="_blank">Medidas generales</a>
+                    <span class="lesson-duration">05:12</span>
                 </li>
-                
             </ul>
         </div>
-    
-        <div class="section">
-            <div class="section-title" onclick="toggleSection(this)">Diseño del interior</div> 
-            <ul class="lesson-list"> 
+
+        <div class="section" onclick="toggleSection(this)">
+            <div class="section-title">Diseño del interior</div>
+            <ul class="lesson-list">
                 <li class="lesson">
-                    <a href="https://youtu.be/dogk79ZSj_o" class="lesson-title" target="_blank">Ubicar accesorio</a> 
-                    <span class="lesson-duration">04:43</span> 
+                    <a href="https://youtu.be/dogk79ZSj_o" class="lesson-title" target="_blank">Ubicar accesorio</a>
+                    <span class="lesson-duration">04:43</span>
                 </li>
                 <li class="lesson">
-                    <a href="https://youtu.be/5am2uZgTmnY" class="lesson-title" target="_blank">Ubicar estante</a> 
-                    <span class="lesson-duration">02:54</span> 
+                    <a href="https://youtu.be/5am2uZgTmnY" class="lesson-title" target="_blank">Ubicar estante</a>
+                    <span class="lesson-duration">02:54</span>
                 </li>
                 <li class="lesson">
-                    <a href="https://youtu.be/65aunXGHaV4" class="lesson-title" target="_blank">Divisores</a> 
-                    <span class="lesson-duration">02:51</span> 
+                    <a href="https://youtu.be/65aunXGHaV4" class="lesson-title" target="_blank">Divisores</a>
+                    <span class="lesson-duration">02:51</span>
                 </li>
                 <li class="lesson">
-                    <a href="https://youtu.be/juHy3TJtdIY" class="lesson-title" target="_blank">Cuerpos-celdas</a> 
-                    <span class="lesson-duration">06:20</span> 
+                    <a href="https://youtu.be/juHy3TJtdIY" class="lesson-title" target="_blank">Cuerpos-celdas</a>
+                    <span class="lesson-duration">06:20</span>
                 </li>
-                
             </ul>
         </div>
-    
-        <div class="section">
-            <div class="section-title" onclick="toggleSection(this)">Extraibles</div> 
-            <ul class="lesson-list"> 
+
+        <div class="section" onclick="toggleSection(this)">
+            <div class="section-title">Extraíbles</div>
+            <ul class="lesson-list">
                 <li class="lesson">
-                    <a href="https://youtu.be/QhSQ-9PuwZY" class="lesson-title" target="_blank">Ubicar cajones</a> 
-                    <span class="lesson-duration">04:43</span> 
+                    <a href="https://youtu.be/QhSQ-9PuwZY" class="lesson-title" target="_blank">Ubicar cajones</a>
+                    <span class="lesson-duration">04:43</span>
                 </li>
-               
             </ul>
-
-
-
+        </div>
 
     </div>
 
     <script>
         function toggleSection(section) {
-            section.classList.toggle('active');
+            const lessonList = section.querySelector('.lesson-list');
+            if (lessonList.style.display === "block") {
+                lessonList.style.display = "none";
+            } else {
+                lessonList.style.display = "block";
+            }
         }
     </script>
 
