@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+
+h1 {
+    color: #ff007f;
+    text-align: center;
+}
+
+#plot {
+    text-align: center;
+}
