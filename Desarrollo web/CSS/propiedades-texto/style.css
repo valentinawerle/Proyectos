@@ -1,0 +1,15 @@
+p {
+    color:red;
+    font-family: sans-serif, tahoma, arial;
+    font-size: 13 px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: justify;
+    text-decoration: underline;
+    
+    
+}
+
+h1 {
+    text-align: center;
+}
