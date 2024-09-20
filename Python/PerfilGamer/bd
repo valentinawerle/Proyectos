@@ -1,0 +1,8 @@
+import sqlite3
+
+conn = sqlite3.connect('basic_database.db')
+conn.execute('''CREATE TABLE users
+             (id INTEGER PRIMARY KEY AUTOINCREMENT,
+              email TEXT NOT NULL,
+              password TEXT NOT NULL)''')
+conn.close()
