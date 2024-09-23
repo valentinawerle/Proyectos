@@ -1,7 +1,10 @@
 #Manipulacion de imagenes
 
 import numpy as np
+import matplotlib
+matplotlib.use('TkAgg')  # o 'Qt5Agg' dependiendo de tu sistema
 import matplotlib.pyplot as plt
+
 import cv2
 
 imagen = cv2.imread("/home/valentinawerle/Documentos/Imagenes/perrito.jpg")
