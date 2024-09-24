@@ -1,0 +1,9 @@
+div{
+    background-color: red;
+    width: 150px;
+    margin: auto;
+    text-align: center;
+    border: 3px solid blue;
+    border-top-left-radius: 10px;
+}
+
