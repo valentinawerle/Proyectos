@@ -1,11 +1,15 @@
 p {
     color:red;
-    font-family: sans-serif, tahoma, arial;
+    font-family: Roboto;
     font-size: 13 px;
-    font-weight: bold;
+    font-weight: 100;
     font-style: italic;
     text-align: justify;
     text-decoration: underline;
+    line-height: 1.5; 
+    letter-spacing: 1px;
+
+
     
     
 }

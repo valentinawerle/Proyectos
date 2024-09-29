@@ -1,0 +1,29 @@
+body{
+    background-color: pink;
+    font-family: sans-serif;
+}
+
+.card{
+    background-color: paleturquoise;
+    text-align: center;
+    width: 800px;
+    margin: auto;
+    margin-top: 20px;
+    
+}
+
+h1{
+    padding-top: 10px
+}
+
+h2{
+    font-size: 18px;
+    font-weight: 100;
+}
+
+p{
+    font-size: 15px;
+    padding: 20px;
+    background-color: violet;
+    text-align: justify;
+}
