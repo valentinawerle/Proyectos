@@ -1,0 +1,25 @@
+.box{
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    background-color: #0006;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR2ggBFj247RGrpYorIMeKPobuPVssuHSePUSVAQpij6UvRPCwXSm5HL8A0gndZO-e8XU&usqp=CAU");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+body  {
+
+    background-color: rgb(39, 75, 39);
+    margin: 0;
+}
+
+.opaco{
+
+    height: 100%;
+    width: 100%; 
+    background-color: #000a;
+
+}
