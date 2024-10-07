@@ -1,21 +1,34 @@
 body{
-    background-color: pink;
+    background-color: rgb(255, 255, 255);
     font-family: sans-serif;
 }
 
 .card{
-    background-color: paleturquoise;
+    background-color: #fcb1f8; ;
     text-align: center;
-    width: 800px;
+    width: 400px;
     margin: auto;
     margin-top: 20px;
+    box-shadow: 0 0 45px 0 #0007;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+
     
+}
+.card-blue{
+
+    background: rgb(136, 136, 229);
+}
+
+.card-green{
+    background: #cefd82;
 }
 
 h1{
     padding-top: 10px
 }
-
+ 
 h2{
     font-size: 18px;
     font-weight: 100;
@@ -24,6 +37,13 @@ h2{
 p{
     font-size: 15px;
     padding: 20px;
-    background-color: violet;
     text-align: justify;
+}
+
+.card_img{
+    width: 160px;
+    border-radius: 50%;
+    margin: auto;
+    box-shadow: 0 0 45px 0 #0007;
+
 }
