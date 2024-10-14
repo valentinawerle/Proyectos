@@ -1,0 +1,85 @@
+body{
+    margin:0;
+    background-color: #222;
+    color: #fff;
+}
+
+h2{
+    text-align: center;
+    margin: 0;
+    margin-bottom: 25px;
+    color: #eee;
+    font-family: sans-serif;
+}
+
+form{
+    background-color: transparent;
+    padding: 20px 40px;
+    margin: auto;
+    max-width: 500px;
+    box-shadow: 0px 0px 55px #fff2;
+    margin-top: 50px;
+}
+
+
+
+input,
+textarea,
+select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px; /* Aumento de padding */
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+    border: 1px solid rgba(238, 238, 238, 0.5); /* Borde más sutil */
+    color: #eee;
+    transition: border-color 0.3s; /* Transición de borde */
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #FF00FF; /* Cambia el borde al hacer foco */
+    outline: none; /* Quitar el contorno predeterminado */
+}
+
+option{
+    background-color: #222;
+
+}
+
+textarea{
+
+    min-width: 100%;
+    resize: none;
+    max-height:200px;
+    font-family: sans-serif;
+    min-height: 100px;
+}
+
+label{
+    font-family: sans-serif;
+    font-size: 0.88em; /* Aquí está el cambio */
+    color: #fff;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #FF00FF; /* Color fucsia */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    box-shadow: 0px 0px 15px #FF00FF;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #a402a4; /* Un tono más oscuro al pasar el cursor */
+}
+
+
