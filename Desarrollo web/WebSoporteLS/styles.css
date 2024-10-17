@@ -88,9 +88,11 @@ h1 {
 }
 
 .help-section {
-    background-color: #fff;
+    background-color: #f3f3f3;
     padding: 40px 20px;
+    margin-top: -20px; /* Mueve la sección 20px hacia arriba */
 }
+
 
 h2 {
     font-size: 22px;
@@ -99,21 +101,35 @@ h2 {
 
 .help-options {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    flex-direction: column; /* Apila las tarjetas una debajo de la otra */
+    align-items: center; /* Alinea las tarjetas en el centro del contenedor */
+    gap: 20px; /* Espacio entre las tarjetas */
 }
 
 .help-card {
     display: flex;
     align-items: center;
     background-color: #f8f8f8;
-    padding: 20px;
+    padding: 16px;
+    gap: 16px;
     border-radius: 10px;
-    width: 300px;
+    width: 660px; /* Ancho fijo */
+    height: 76px; /* Altura fija */
     text-align: left;
     text-decoration: none;
     color: #333;
+    box-sizing: border-box; /* Asegura que padding esté incluido en el tamaño total */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave inicial */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transición suave para la sombra y la transformación */
 }
+
+.help-card:hover {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al hacer hover */
+    transform: translateY(-4px); /* Mueve la caja ligeramente hacia arriba */
+}
+
+
+
 
 .help-card .icon {
     font-size: 30px;
@@ -126,7 +142,7 @@ h2 {
 }
 
 footer {
-    background-color: #fff;
+    background-color: #f3f3f3;
     padding: 20px;
     margin-top: 20px;
 }
@@ -138,3 +154,22 @@ footer a {
     color: #666;
     font-size: 14px;
 }
+
+p {
+    font-size: 14px; /* Tamaño del texto */
+    font-weight: 400; /* Peso normal */
+    color: #4F4F4F; /* Color gris oscuro */
+    line-height: 1.5; /* Altura de línea para buena legibilidad */
+    margin: 0; /* Elimina el margen por defecto */
+    font-family: Arial, sans-serif; /* Fuente sans-serif limpia */
+}
+
+h3{
+    font-size: 17px; /* Tamaño del texto */
+    font-weight: 600;
+    color: #4F4F4F; /* Color gris oscuro */
+    line-height: 1.5; /* Altura de línea para buena legibilidad */
+    margin: 0; /* Elimina el margen por defecto */
+    font-family: Arial, sans-serif; /* Fuente sans-serif limpia */
+}
+
