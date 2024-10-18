@@ -142,15 +142,15 @@ h2 {
 }
 
 footer {
-    background-color: #f3f3f3;
-    padding: 20px;
-    margin-top: 20px;
+    background-color: #f3f3f3 !important;
+    padding: 20px !important;
+    margin-bottom: 30px !important;
 }
 
 footer a {
     display: inline-block;
     margin: 0 10px;
-    text-decoration: none;
+    text-decoration: underline;
     color: #666;
     font-size: 14px;
 }
