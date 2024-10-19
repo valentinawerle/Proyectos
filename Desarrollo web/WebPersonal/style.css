@@ -1,85 +1,198 @@
-body{
-    margin:0;
-    background-color: #222;
-    color: #fff;
-}
-
-h2{
-    text-align: center;
+/* Reset y estilos base */
+* {
     margin: 0;
-    margin-bottom: 25px;
-    color: #eee;
-    font-family: sans-serif;
-}
-
-form{
-    background-color: transparent;
-    padding: 20px 40px;
-    margin: auto;
-    max-width: 500px;
-    box-shadow: 0px 0px 55px #fff2;
-    margin-top: 50px;
-}
-
-
-
-input,
-textarea,
-select {
-    width: 100%;
+    padding: 0;
     box-sizing: border-box;
-    padding: 12px; /* Aumento de padding */
-    margin-top: 8px;
-    margin-bottom: 20px;
-    border-radius: 5px; /* Bordes redondeados */
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
-    border: 1px solid rgba(238, 238, 238, 0.5); /* Borde más sutil */
-    color: #eee;
-    transition: border-color 0.3s; /* Transición de borde */
 }
 
-input:focus,
-textarea:focus,
-select:focus {
-    border-color: #FF00FF; /* Cambia el borde al hacer foco */
-    outline: none; /* Quitar el contorno predeterminado */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    background-color: #202430;
 }
 
-option{
-    background-color: #222;
-
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
-textarea{
-
-    min-width: 100%;
-    resize: none;
-    max-height:200px;
-    font-family: sans-serif;
-    min-height: 100px;
+h1, h2, h3 {
+    margin-bottom: 1rem;
 }
 
-label{
-    font-family: sans-serif;
-    font-size: 0.88em; /* Aquí está el cambio */
-    color: #fff;
+h1 {
+    font-size: 2.5rem;
 }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #FF00FF; /* Color fucsia */
-    color: #fff;
-    border: none;
-    border-radius: 4px;
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header p {
+    color: #9ca3af;
+    margin-bottom: 1rem;
+}
+
+#resume-btn {
+    background-color: #202430;
+    color: white;
+    border-color: #F797FC;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
     cursor: pointer;
-    font-size: 1em;
-    box-shadow: 0px 0px 15px #FF00FF;
-    transition: background-color 0.3s;
+    border-radius: 0.25rem;
+    transition: 0.3s;
 }
 
-button:hover {
-    background-color: #a402a4; /* Un tono más oscuro al pasar el cursor */
+#resume-btn:hover {
+    scale: 1.1;
 }
 
+/* About section */
+#about {
+    margin-bottom: 3rem;
+}
 
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-text {
+    border: 1px solid #F797FC;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.about-image img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icon {
+    color: #9ca3af;
+}
+
+.social-icon:hover {
+    color: #ffffff;
+}
+
+/* Stack section */
+#stack {
+    margin-bottom: 3rem;
+}
+
+.stack-section {
+    margin-bottom: 2rem;
+}
+
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 1rem;
+}
+
+.stack-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stack-item img {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Contact form */
+#contact {
+    margin-bottom: 3rem;
+}
+
+#contactForm {
+    background-color: #202430;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 55px #fff2
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #323b4a;
+    border: none;
+    border-radius: 0.25rem;
+    color: #ffffff;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #202430;
+    border: solid 1px;
+    border-color: #F797FC;
+    color: #fff;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+    scale: 1.01;
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .about-text {
+        width: 60%;
+        margin-bottom: 0;
+        margin-right: 2rem;
+    }
+
+    .about-image {
+        width: 40%;
+    }
+
+    .stack-grid {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}

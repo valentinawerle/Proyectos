@@ -56,3 +56,12 @@ label{
     color: #fff;
 }
 
+.checkbox{
+    width: auto;
+    height: 10px;;
+}
+
+a{
+    color: #69f;
+    text-decoration: none;
+}
