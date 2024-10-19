@@ -78,6 +78,13 @@ header p {
     margin-bottom: 1rem;
 }
 
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Para alinear el texto y los íconos centrados */
+}
+
 .about-image img {
     width: 12rem;
     height: 12rem;
@@ -89,6 +96,7 @@ header p {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    margin-top: 1rem; /* Espaciado adicional entre la imagen y los íconos */
 }
 
 .social-icon {
@@ -98,6 +106,7 @@ header p {
 .social-icon:hover {
     color: #ffffff;
 }
+
 
 /* Stack section */
 #stack {
