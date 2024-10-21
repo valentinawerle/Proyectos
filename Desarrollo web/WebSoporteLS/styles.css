@@ -11,12 +11,39 @@ body {
     text-align: center;
 }
 
+.background-container {
+    position: relative;
+    background-image: url('https://s3.amazonaws.com/lepton-web/ckeditor_assets/pictures/2/content_lepton_empresa.jpg');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+/* Sombra negra sobre la imagen */
+.background-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad aquí */
+    z-index: 2; /* Superponer sobre la imagen */
+}
+
+/* Asegurar que el contenido del header y hero quede por encima */
+header, .hero {
+    position: relative;
+    z-index: 3; /* Encima del overlay */
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #fff;
+
 }
 
 .logo img {
@@ -42,15 +69,24 @@ nav a {
     padding: 10px 20px;
 }
 
+.search-icon{
+    color:#fff;
+}
+
+.inicio:hover {
+    background-color: rgba(255, 255, 255, 0.4); /* Efecto hover */
+}
+
 .hero {
-    background-color: #fff;
     padding: 40px 20px;
     margin-bottom: 20px;
 }
 
+
 h1 {
     font-size: 24px;
     margin-bottom: 20px;
+    color: #fff;
 }
 
 .search-bar {
@@ -83,9 +119,36 @@ h1 {
 }
 
 .social-links a {
-    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo translúcido */
+    border-radius: 10px; /* Bordes redondeados */
+    color: #fff;
     text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    backdrop-filter: blur(5px); /* Efecto de difuminado */
 }
+
+.social-links a:hover {
+    background-color: rgba(255, 255, 255, 0.4); /* Efecto hover */
+}
+
+.social-links a i {
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+/* Opcional: Ajustes específicos para diferentes íconos */
+.social-links .facebook {
+    background-color: rgba(59, 89, 152, 0.2); /* Color personalizado para Facebook */
+}
+
+.social-links .twitter {
+    background-color: rgba(29, 161, 242, 0.2); /* Color personalizado para Twitter */
+}
+
 
 .help-section {
     background-color: #f3f3f3;
