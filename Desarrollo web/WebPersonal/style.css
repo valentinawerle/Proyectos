@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
     line-height: 1.6;
     color: #ffffff;
     background-color: #202430;
@@ -18,35 +18,82 @@ body {
     padding: 2rem 1rem;
 }
 
+
+
 h1, h2, h3 {
     margin-bottom: 1rem;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 4.0rem;
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    padding-bottom: 20px;
+    text-shadow: 4px 4px 6px #0008;
+    
 }
 
+.typewriter h1 {
+    overflow: hidden;
+    border-right: .15em solid #F797FC; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+
+
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #F797FC; }
+  }
+
 h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    text-align: center;
+    padding-bottom: 30px;
+    text-shadow: 4px 4px 6px #0008;
+    
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    padding: 30px 30px;
 }
 
 /* Header */
 header {
     text-align: center;
     margin-bottom: 3rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 header p {
     color: #9ca3af;
     margin-bottom: 1rem;
+    padding: 20px 20px;
+    font-size: 1.5rem;
+    text-shadow: 4px 4px 6px #0008;
 }
 
 #resume-btn {
     background-color: #202430;
+    max-width: 150px;
     color: white;
     border-color: #F797FC;
     padding: 0.5rem 1rem;
@@ -54,6 +101,7 @@ header p {
     cursor: pointer;
     border-radius: 0.25rem;
     transition: 0.3s;
+    text-shadow: 4px 4px 6px #0005;
 }
 
 #resume-btn:hover {
@@ -62,8 +110,16 @@ header p {
 
 /* About section */
 #about {
+    text-align: center;
     margin-bottom: 3rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 4px 4px 6px #0008;
 }
+
 
 .about-content {
     display: flex;
@@ -76,13 +132,8 @@ header p {
     border-radius: 0.5rem;
     padding: 1rem;
     margin-bottom: 1rem;
-}
-
-.about-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center; /* Para alinear el texto y los íconos centrados */
+    font-size: 1.2rem;
+    
 }
 
 .about-image img {
@@ -96,7 +147,7 @@ header p {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-top: 1rem; /* Espaciado adicional entre la imagen y los íconos */
+
 }
 
 .social-icon {
@@ -107,10 +158,20 @@ header p {
     color: #ffffff;
 }
 
-
 /* Stack section */
 #stack {
+    text-align: center;
     margin-bottom: 3rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.h2-stack{
+    border-bottom: 1px solid #fff;
 }
 
 .stack-section {
@@ -120,7 +181,8 @@ header p {
 .stack-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    gap: 1rem;
+    gap: 2rem;
+    color: #202430;
 }
 
 .stack-item {
@@ -128,11 +190,19 @@ header p {
     flex-direction: column;
     align-items: center;
     text-align: center;
+
+    transition: 0.3s;
+}
+
+.stack-item:hover{
+    transform: scale(1.2);
+    color: #fff;
+
 }
 
 .stack-item img {
-    width: 3rem;
-    height: 3rem;
+    width: 6rem;
+    height: 6rem;
     margin-bottom: 0.5rem;
 }
 
@@ -145,7 +215,8 @@ header p {
     background-color: #202430;
     padding: 1.5rem;
     border-radius: 0.5rem;
-    box-shadow: 0px 0px 55px #fff2
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.4);
+
 }
 
 .form-group {
