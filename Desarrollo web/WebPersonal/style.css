@@ -18,8 +18,6 @@ body {
     padding: 2rem 1rem;
 }
 
-
-
 h1, h2, h3 {
     margin-bottom: 1rem;
 }
@@ -45,7 +43,6 @@ h1 {
   }
 
 
-  
   /* The typing effect */
   @keyframes typing {
     from { width: 0 }
@@ -69,6 +66,12 @@ h2 {
 h3 {
     font-size: 1.8rem;
     padding: 30px 30px;
+}
+
+#particles-js {
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
 
 /* Header */
