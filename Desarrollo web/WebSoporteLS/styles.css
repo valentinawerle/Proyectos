@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -96,20 +97,21 @@ h1 {
 }
 
 .search-bar input {
-    padding: 10px;
-    width: 300px;
-    border-radius: 20px 0 0 20px;
-    border: 1px solid #ccc;
-    font-size: 16px;
+    padding: 15px; /* Aumentamos el padding para hacerla más grande */
+    width: 400px; /* Aumentamos el ancho del input */
+    border-radius: 10px 0 0 10px;
+    border: 0px solid #ccc; /* Hacemos el borde más grueso */
+    font-size: 18px; /* Aumentamos el tamaño de la fuente */
 }
 
 .search-bar button {
-    padding: 10px 20px;
-    border-radius: 0 20px 20px 0;
-    border: 1px solid #ccc;
-    background-color: #666;
-    color: white;
+    padding: 15px 25px; /* Aumentamos el padding del botón */
+    border-radius: 0 10px 10px 0;
+    border: 0px solid #ccc; /* Borde más grueso */
+    background-color: #fff;
+    color: #666;
 }
+
 
 .social-links {
     display: flex;
@@ -235,4 +237,3 @@ h3{
     margin: 0; /* Elimina el margen por defecto */
     font-family: Arial, sans-serif; /* Fuente sans-serif limpia */
 }
-
