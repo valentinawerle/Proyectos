@@ -72,9 +72,8 @@ canvas{
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
+   /* Aqui le pones con el z-index -1 como fondo del header, para que aparezca detras de todo el contenido*/
   position: absolute;
-    width: 100%;
-    height: 100vh;
     z-index: -1;
 }
 
