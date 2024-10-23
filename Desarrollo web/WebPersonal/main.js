@@ -23,6 +23,19 @@ const tools = [
     { name: 'SQL', icon: 'https://img.icons8.com/?size=100&id=qGUfLiYi1bRN&format=png&color=000000' },
 ];
 
+// Move Sections
+const sections = document.querySelectorAll('.section');
+let currentSection = 0;
+
+window.addEventListener('wheel', (event) => {
+  if (event.deltaY > 0) {
+    currentSection = Math.min(currentSection + 1, sections.length - 1);
+  } else {
+    currentSection = Math.max(currentSection - 1, 0);
+  }
+  sections[currentSection].scrollIntoView({ behavior: 'smooth' });
+});
+
 // Function to create stack items
 function createStackItems(items, containerId) {
     const container = document.getElementById(containerId);
