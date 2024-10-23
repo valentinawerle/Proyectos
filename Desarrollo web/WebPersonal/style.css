@@ -275,11 +275,15 @@ header p {
 
 /* Contact form */
 #contact {
-    
-    margin-bottom: 3rem;
+    flex-direction: column;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
 }
 
 #contactForm {
+    width: 100%;
+    max-width: 60rem;
     background-color: #202430;
     padding: 1.5rem;
     border-radius: 0.5rem;
