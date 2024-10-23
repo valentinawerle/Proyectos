@@ -5,6 +5,16 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-snap-type: y mandatory;
+}
+
+.section{
+    height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
 body {
     font-family: sans-serif;
     line-height: 1.6;
@@ -265,6 +275,7 @@ header p {
 
 /* Contact form */
 #contact {
+    
     margin-bottom: 3rem;
 }
 
