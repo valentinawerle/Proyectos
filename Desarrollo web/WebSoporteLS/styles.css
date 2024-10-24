@@ -355,3 +355,21 @@ h3{
     text-align: left;
 }
 
+.close-btn {
+    position: fixed; /* Cambié 'absolute' por 'fixed' para mantenerla visible al hacer scroll */
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #9da0af;
+    border-radius: 8px;
+    background: #eeeff1;
+    padding: 10px 15px;
+}
+
+.close-btn:hover {
+    color: red; /* El hover cambia el color a rojo */
+    background-color: #ffcece;
+}
+

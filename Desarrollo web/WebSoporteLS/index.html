@@ -23,12 +23,20 @@
         </header>
         <section class="hero">
             <h1>Bienvenido a nuestra Mesa de Ayuda</h1>
-        <div class="search-bar">
-            <input type="text" placeholder="buscador">
-            <button>
-                <i class="fa-solid fa-magnifying-glass"></i> 
-            </button>
-        </div>
+                <div class="search-bar" onclick="openSearchPage()">
+                    <input type="text" placeholder="buscador" id="searchInput">
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+
+                <script>
+                    function openSearchPage() {
+                        // Aquí se abre la página buscador.html
+                        window.location.href = "buscardor.html";
+                    }
+                </script>
+
         <div class="social-links">
             <a href="https://www.lepton.com.ar/web/">🌐 lepton.com.ar</a>
             <a href="https://www.facebook.com/optimizadorcortes/?locale=es_LA">Facebook</a>
