@@ -1,5 +1,7 @@
 /* Reset y estilos base */
-* {
+*,
+::after,
+::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,67 +20,70 @@ body {
     padding: 2rem 1rem;
 }
 
-canvas{
-  display:block;
-  vertical-align:bottom;
+canvas {
+    display: block;
+    /* vertical-align: bottom; */
 }
 
 /* ---- stats.js ---- */
 
-.count-particles{
-  background: #000022;
-  position: absolute;
-  top: 48px;
-  left: 0;
-  width: 80px;
-  color: #13E8E9;
-  font-size: .8em;
-  text-align: left;
-  text-indent: 4px;
-  line-height: 14px;
-  padding-bottom: 2px;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: bold;
+.count-particles {
+    background: #000022;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 80px;
+    color: #13E8E9;
+    font-size: .8em;
+    text-align: left;
+    text-indent: 4px;
+    line-height: 14px;
+    padding-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
 }
 
-.js-count-particles{
-  font-size: 1.1em;
+.js-count-particles {
+    font-size: 1.1em
 }
 
 #stats,
-.count-particles{
-  -webkit-user-select: none;
-  margin-top: 5px;
-  margin-left: 5px;
+.count-particles {
+    user-select: none;
+    -webkit-user-select: none;
+    margin-top: 5px;
+    margin-left: 5px;
 }
 
-#stats{
-  border-radius: 3px 3px 0 0;
-  overflow: hidden;
+#stats {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
 }
 
-.count-particles{
-  border-radius: 0 0 3px 3px;
+.count-particles {
+    border-radius: 0 0 3px 3px
 }
 
 
 /* ---- particles.js container ---- */
 
-#particles-js{
-  width: 100%;
-  height: 100%;
-  background-color: #202430;
-  background-image: url('');
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-   /* Aqui le pones con el z-index -1 como fondo del header, para que aparezca detras de todo el contenido*/
-  position: absolute;
+#particles-js {
+    width: 100%;
+    height: 100%;
+    background-color: #202430;
+    background-image: url('');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    /* Aqui le pones con el z-index -1 como fondo del header, para que aparezca detras de todo el contenido*/
+    position: absolute;
     z-index: -1;
 }
 
-h1, h2, h3 {
-    margin-bottom: 1rem;
+h1,
+h2,
+h3 {
+    margin-bottom: 1rem
 }
 
 h1 {
@@ -88,39 +93,47 @@ h1 {
     letter-spacing: 2px;
     padding-bottom: 20px;
     text-shadow: 4px 4px 6px #0008;
-    
 }
 
 .typewriter h1 {
     overflow: hidden;
-    border-right: .15em solid #F797FC; 
-    white-space: nowrap; 
-    margin: 0 auto; 
-    animation: 
-      typing 3.5s steps(40, end),
-      blink-caret .75s step-end infinite;
-  }
+    border-right: .15em solid #F797FC;
+        white-space: nowrap;
+        margin: 0 auto;
+        animation:
+            typing 3.5s steps(40, end),
+            blink-caret .75s step-end infinite;
+    }
 
 
-  
-  /* The typing effect */
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #F797FC; }
-  }
+/* The typing effect */
+@keyframes typing {
+    from {
+            width: 0
+        }
+    
+        to {
+            width: 100%
+        }
+    }
+    
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+    from,
+        to {
+            border-color: transparent
+        }
+    
+        50% {
+            border-color: #F797FC;
+        }
+    }
 
 h2 {
     font-size: 2.5rem;
     text-align: center;
     padding-bottom: 30px;
     text-shadow: 4px 4px 6px #0008;
-    
 }
 
 h3 {
@@ -137,7 +150,6 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 header p {
@@ -162,7 +174,7 @@ header p {
 }
 
 #resume-btn:hover {
-    scale: 1.1;
+    scale: 1.1
 }
 
 /* About section */
@@ -177,7 +189,6 @@ header p {
     text-shadow: 4px 4px 6px #0008;
 }
 
-
 .about-content {
     display: flex;
     flex-direction: column;
@@ -190,7 +201,6 @@ header p {
     padding: 1rem;
     margin-bottom: 1rem;
     font-size: 1.2rem;
-    
 }
 
 .about-image img {
@@ -204,15 +214,14 @@ header p {
     display: flex;
     justify-content: center;
     gap: 1rem;
-
 }
 
 .social-icon {
-    color: #9ca3af;
+    color: #9ca3af
 }
 
 .social-icon:hover {
-    color: #ffffff;
+    color: #ffffff
 }
 
 /* Stack section */
@@ -224,10 +233,9 @@ header p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 }
 
-.h2-stack{
+.h2-stack {
     border-bottom: 1px solid #fff;
 }
 
@@ -247,14 +255,12 @@ header p {
     flex-direction: column;
     align-items: center;
     text-align: center;
-
     transition: 0.3s;
 }
 
-.stack-item:hover{
+.stack-item:hover {
     transform: scale(1.2);
     color: #fff;
-
 }
 
 .stack-item img {
@@ -273,11 +279,10 @@ header p {
     padding: 1.5rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.4);
-
 }
 
 .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem
 }
 
 label {
@@ -286,7 +291,9 @@ label {
     font-size: 0.875rem;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     width: 100%;
     padding: 0.5rem;
     background-color: #323b4a;
@@ -309,7 +316,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    scale: 1.01;
+    scale: 1.01
 }
 
 /* Responsive design */
