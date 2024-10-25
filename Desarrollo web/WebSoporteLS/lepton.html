@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            width: auto;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DHs000000QSJA" method="POST">
+
+    <input type="hidden" name="orgid" value="00DHs000000QSJA">
+    <input type="hidden" name="retURL" value="https://www.lepton.com.ar/web/soporte/soporte-tecnico">
+
+    <!-- Nombre del contacto -->
+    <label for="name">Nombre y apellido *</label>
+    <input id="name" name="name" type="text" maxlength="80" required>
+
+    <!-- Email -->
+    <label for="email">Email *</label>
+    <input id="email" name="email" type="email" maxlength="80" required>
+
+    <!-- Teléfono -->
+    <label for="phone">Teléfono *</label>
+    <input id="phone" name="phone" type="text" maxlength="40" required>
+
+    <!-- CUIT sin puntos ni guiones ( XXXXXXXXXXX ) -->
+    <label for="00NVL000001aA3V">CUIT *</label>
+    <input id="00NVL000001aA3V" name="00NVL000001aA3V" type="text" maxlength="22" required>
+
+    <!-- Tipo de Caso -->
+    <label for="type">Tipo de Caso *</label>
+    <select id="type" name="type" required>
+        <option value="">--Ninguno--</option>
+        <option value="Soporte">Soporte</option>
+        <option value="Capacitación">Capacitación</option>
+        <option value="Implementación">Implementación</option>
+        <option value="Ventas">Ventas</option>
+        <option value="Administración">Administración</option>
+    </select>
+
+    <!-- Motivo del caso -->
+    <label for="reason">Motivo del caso *</label>
+    <select id="reason" name="reason" required>
+        <option value="">--Ninguno--</option>
+        <option value="Consulta general">Consulta general</option>
+        <option value="CNC">CNC</option>
+        <option value="Curso">Curso</option>
+        <option value="Clave">Clave</option>
+        <option value="Administrativa">Administrativa</option>
+        <option value="Cobranzas">Cobranzas</option>
+        <option value="Ventas">Ventas</option>
+        <option value="Consulta de uso">Consulta de uso</option>
+    </select>
+
+    <!-- Sistema que utiliza -->
+    <label for="00NVL000001XlM9">Sistema que utiliza *</label>
+    <select id="00NVL000001XlM9" name="00NVL000001XlM9" required>
+        <option value="">--Ninguno--</option>
+        <option value="Focus">Focus y Armarius</option>
+        <option value="Módulo Leptonray">Módulo Leptonray</option>
+        <option value="Lepton Optimizer">Lepton Optimizer</option>
+        <option value="Lepton Optimizer Web">Lepton Optimizer Web</option>
+        <option value="Winmaker">Winmaker</option>
+        <option value="Gcad">Gcad</option>
+        <option value="Gplus">Gplus</option>
+        <option value="Módulo CNC para Focus / Armarius">Módulo CNC para Focus / Armarius</option>
+        <option value="Lepton Optimizer con CNC">Lepton Optimizer con CNC</option>
+        <option value="Winmaker CNC">Winmaker CNC</option>
+    </select>
+
+    <!-- N° Licencia (No es obligatorio) -->
+    <label for="00NVL000001aVXl">N° Licencia</label>
+    <input id="00NVL000001aVXl" name="00NVL000001aVXl" type="text" maxlength="255">
+
+    <!-- Asunto -->
+    <label for="subject">Asunto *</label>
+    <input id="subject" name="subject" type="text" maxlength="80" required>
+
+    <!-- Descripción -->
+    <label for="description">Descripción del Caso *</label>
+    <textarea id="description" name="description" required></textarea>
+
+    <!-- Submit -->
+    <input type="submit" value="Enviar">
+
+</form>
+
+</body>
+</html>

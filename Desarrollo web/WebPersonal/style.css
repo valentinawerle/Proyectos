@@ -1,15 +1,14 @@
-/* Reset y estilos base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-snap-type: y mandatory;
 }
 
-.section{
+.section {
     height: 100vh;
     scroll-snap-align: start;
     scroll-snap-stop: always;
@@ -28,109 +27,115 @@ body {
     padding: 2rem 1rem;
 }
 
-canvas{
-  display:block;
-  vertical-align:bottom;
+/* Canvas */
+canvas {
+    display: block;
+    vertical-align: bottom;
 }
 
-/* ---- stats.js ---- */
-
-.count-particles{
-  background: #000022;
-  position: absolute;
-  top: 48px;
-  left: 0;
-  width: 80px;
-  color: #13E8E9;
-  font-size: .8em;
-  text-align: left;
-  text-indent: 4px;
-  line-height: 14px;
-  padding-bottom: 2px;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: bold;
+/* Stats */
+.count-particles {
+    background: #000022;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 80px;
+    color: #13E8E9;
+    font-size: 0.8em;
+    text-align: left;
+    text-indent: 4px;
+    line-height: 14px;
+    padding-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
 }
 
-.js-count-particles{
-  font-size: 1.1em;
+.js-count-particles {
+    font-size: 1.1em;
 }
 
 #stats,
-.count-particles{
-  -webkit-user-select: none;
-  margin-top: 5px;
-  margin-left: 5px;
+.count-particles {
+    -webkit-user-select: none;
+    margin-top: 5px;
+    margin-left: 5px;
 }
 
-#stats{
-  border-radius: 3px 3px 0 0;
-  overflow: hidden;
+#stats {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
 }
 
-.count-particles{
-  border-radius: 0 0 3px 3px;
+.count-particles {
+    border-radius: 0 0 3px 3px;
 }
 
-
-/* ---- particles.js container ---- */
-
-#particles-js{
-  width: 100%;
-  height: 100%;
-  background-color: #202430;
-  background-image: url('');
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-   /* Aqui le pones con el z-index -1 como fondo del header, para que aparezca detras de todo el contenido*/
-  position: absolute;
+/* Particles.js container */
+#particles-js {
+    width: 100%;
+    height: 100%;
+    background-color: #202430;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: absolute;
     z-index: -1;
 }
 
+/* Headings */
 h1, h2, h3 {
     margin-bottom: 1rem;
 }
 
 h1 {
-    font-size: 6.0rem;
+    font-size: 8vw; /* Ajusta el tamaño según el ancho de la pantalla */
     font-family: "Pixelify Sans", sans-serif;
     font-weight: 400;
     letter-spacing: 2px;
     padding-bottom: 20px;
     text-shadow: 4px 4px 6px #0008;
-    
 }
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 10vw; /* Un poco más pequeño en pantallas medianas */
+        padding-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 12vw; /* Más pequeño para pantallas pequeñas */
+    }
+}
+
 
 .typewriter h1 {
     overflow: hidden;
-    border-right: .15em solid #F797FC; 
-    white-space: nowrap; 
-    margin: 0 auto; 
+    border-right: 0.15em solid #F797FC;
+    white-space: nowrap;
+    margin: 0 auto;
     animation: 
       typing 3.5s steps(40, end),
-      blink-caret .75s step-end infinite;
-  }
+      blink-caret 0.75s step-end infinite;
+}
 
+/* Typing effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
 
-  
-  /* The typing effect */
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
     50% { border-color: #F797FC; }
-  }
+}
 
 h2 {
     font-size: 4rem;
     text-align: center;
     padding-bottom: 30px;
     text-shadow: 4px 4px 6px #0008;
-    
 }
 
 h3 {
@@ -147,7 +152,6 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 header p {
@@ -158,6 +162,7 @@ header p {
     text-shadow: 4px 4px 6px #0008;
 }
 
+/* Resume Button */
 #resume-btn {
     background-color: #202430;
     color: white;
@@ -171,8 +176,59 @@ header p {
 }
 
 #resume-btn:hover {
-    scale: 1.1;
+    transform: scale(1.1);
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 4.0rem;
+        padding-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 3rem;
+        padding-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        padding: 20px 20px;
+    }
+
+    header p {
+        font-size: 1.5rem;
+    }
+
+    #resume-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    #resume-btn {
+        font-size: 1.2rem;
+        padding: 0.6rem 1rem;
+    }
+}
+
 
 /* About section */
 #about {
@@ -187,7 +243,6 @@ header p {
     text-shadow: 4px 4px 6px #0008;
 }
 
-
 .about-content {
     display: flex;
     flex-direction: column;
@@ -200,9 +255,10 @@ header p {
     padding: 1rem;
     margin-bottom: 1rem;
     font-size: 1.5rem;
-    
+    max-width: 600px; /* Limita el ancho en pantallas grandes */
 }
 
+/* Imagen */
 .about-image img {
     width: 12rem;
     height: 12rem;
@@ -210,11 +266,11 @@ header p {
     margin-bottom: 1rem;
 }
 
+/* Enlaces Sociales */
 .social-links {
     display: flex;
     justify-content: center;
     gap: 1rem;
-
 }
 
 .social-icon {
@@ -225,6 +281,36 @@ header p {
     color: #ffffff;
 }
 
+/* Responsive styles */
+@media (max-width: 768px) {
+    .about-text {
+        font-size: 1.2rem; /* Reduce el tamaño de fuente */
+        padding: 0.8rem;
+    }
+
+    .about-image img {
+        width: 10rem;
+        height: 10rem; /* Ajusta el tamaño de la imagen */
+    }
+}
+
+@media (max-width: 480px) {
+    .about-text {
+        font-size: 1rem; /* Fuente aún más pequeña en pantallas pequeñas */
+        padding: 0.6rem;
+    }
+
+    .about-image img {
+        width: 8rem;
+        height: 8rem; /* Imagen más pequeña en dispositivos pequeños */
+    }
+
+    .social-links {
+        gap: 0.5rem; /* Reduce el espacio entre iconos sociales */
+    }
+}
+
+
 /* Stack section */
 #stack {
     text-align: center;
@@ -234,10 +320,9 @@ header p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 }
 
-.h2-stack{
+.h2-stack {
     border-bottom: 1px solid #fff;
 }
 
@@ -257,14 +342,12 @@ header p {
     flex-direction: column;
     align-items: center;
     text-align: center;
-
     transition: 0.3s;
 }
 
-.stack-item:hover{
+.stack-item:hover {
     transform: scale(1.2);
     color: #fff;
-
 }
 
 .stack-item img {
@@ -272,6 +355,34 @@ header p {
     height: 6rem;
     margin-bottom: 0.5rem;
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .stack-item img {
+        width: 5rem; /* Ajusta el tamaño de las imágenes */
+        height: 5rem;
+    }
+
+    .h2-stack {
+        font-size: 2rem; /* Ajusta el tamaño del texto para pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .stack-item img {
+        width: 4rem; /* Más pequeño para pantallas pequeñas */
+        height: 4rem;
+    }
+
+    .h2-stack {
+        font-size: 1.5rem; /* Ajuste adicional para pantallas pequeñas */
+    }
+
+    .stack-grid {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); /* Cambia el tamaño mínimo de la cuadrícula */
+    }
+}
+
 
 /* Contact form */
 #contact {

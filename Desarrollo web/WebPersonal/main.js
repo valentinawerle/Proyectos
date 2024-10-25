@@ -19,7 +19,7 @@ const tools = [
     { name: 'Postman', icon: 'https://cdn.iconscout.com/icon/free/png-256/free-cartero-3628992-3030217.png?f=webp' },
     { name: 'GitHub', icon: 'https://img.icons8.com/m_sharp/200/FFFFFF/github.png' },
     { name: 'VS Code', icon: 'https://img.icons8.com/?size=100&id=9OGIyU8hrxW5&format=png&color=000000' },
-    { name: 'Notion', icon: 'https://img.icons8.com/?size=100&id=nvtEH6DpqruC&format=png&color=000000' },
+    { name: 'Notion', icon: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png' },
     { name: 'SQL', icon: 'https://img.icons8.com/?size=100&id=qGUfLiYi1bRN&format=png&color=000000' },
 ];
 
