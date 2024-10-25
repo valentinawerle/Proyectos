@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -29,14 +28,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad aquí */
-    z-index: 2; /* Superponer sobre la imagen */
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2; 
 }
 
 /* Asegurar que el contenido del header y hero quede por encima */
 header, .hero {
     position: relative;
-    z-index: 3; /* Encima del overlay */
+    z-index: 3; 
 }
 
 header {
@@ -44,7 +43,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-
 }
 
 .logo img {
@@ -70,19 +68,18 @@ nav a {
     padding: 10px 20px;
 }
 
-.search-icon{
-    color:#fff;
+.search-icon {
+    color: #fff;
 }
 
 .inicio:hover {
-    background-color: rgba(255, 255, 255, 0.4); /* Efecto hover */
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .hero {
     padding: 40px 20px;
     margin-bottom: 20px;
 }
-
 
 h1 {
     font-size: 24px;
@@ -97,21 +94,20 @@ h1 {
 }
 
 .search-bar input {
-    padding: 15px; /* Aumentamos el padding para hacerla más grande */
-    width: 400px; /* Aumentamos el ancho del input */
+    padding: 15px;
+    width: 400px;
     border-radius: 10px 0 0 10px;
-    border: 0px solid #ccc; /* Hacemos el borde más grueso */
-    font-size: 18px; /* Aumentamos el tamaño de la fuente */
+    border: 0px solid #ccc; 
+    font-size: 18px; 
 }
 
 .search-bar button {
-    padding: 15px 25px; /* Aumentamos el padding del botón */
+    padding: 15px 25px; 
     border-radius: 0 10px 10px 0;
-    border: 0px solid #ccc; /* Borde más grueso */
+    border: 0px solid #ccc; 
     background-color: #fff;
     color: #666;
 }
-
 
 .social-links {
     display: flex;
@@ -125,39 +121,36 @@ h1 {
     align-items: center;
     justify-content: center;
     padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.2); /* Fondo translúcido */
-    border-radius: 10px; /* Bordes redondeados */
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 10px; 
     color: #fff;
     text-decoration: none;
     font-size: 16px;
     transition: background-color 0.3s ease;
-    backdrop-filter: blur(5px); /* Efecto de difuminado */
+    backdrop-filter: blur(5px); 
 }
 
 .social-links a:hover {
-    background-color: rgba(255, 255, 255, 0.4); /* Efecto hover */
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .social-links a i {
-    margin-right: 8px; /* Espacio entre el ícono y el texto */
+    margin-right: 8px; 
 }
 
-/* Opcional: Ajustes específicos para diferentes íconos */
 .social-links .facebook {
-    background-color: rgba(59, 89, 152, 0.2); /* Color personalizado para Facebook */
+    background-color: rgba(59, 89, 152, 0.2); 
 }
 
 .social-links .twitter {
-    background-color: rgba(29, 161, 242, 0.2); /* Color personalizado para Twitter */
+    background-color: rgba(29, 161, 242, 0.2); 
 }
-
 
 .help-section {
     background-color: #f3f3f3;
     padding: 40px 20px;
-    margin-top: -20px; /* Mueve la sección 20px hacia arriba */
+    margin-top: -20px; 
 }
-
 
 h2 {
     font-size: 22px;
@@ -166,9 +159,9 @@ h2 {
 
 .help-options {
     display: flex;
-    flex-direction: column; /* Apila las tarjetas una debajo de la otra */
-    align-items: center; /* Alinea las tarjetas en el centro del contenedor */
-    gap: 20px; /* Espacio entre las tarjetas */
+    flex-direction: column; 
+    align-items: center; 
+    gap: 20px; 
 }
 
 .help-card {
@@ -178,22 +171,20 @@ h2 {
     padding: 16px;
     gap: 16px;
     border-radius: 10px;
-    width: 660px; /* Ancho fijo */
-    height: 76px; /* Altura fija */
+    width: 660px; 
+    height: 76px; 
     text-align: left;
     text-decoration: none;
     color: #333;
-    box-sizing: border-box; /* Asegura que padding esté incluido en el tamaño total */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave inicial */
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transición suave para la sombra y la transformación */
+    box-sizing: border-box; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s ease, transform 0.3s ease; 
 }
 
 .help-card:hover {
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al hacer hover */
-    transform: translateY(-4px); /* Mueve la caja ligeramente hacia arriba */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-4px); 
 }
-
-
 
 .help-card .info h3 {
     margin-bottom: 5px;
@@ -215,24 +206,22 @@ footer a {
 }
 
 p {
-    font-size: 14px; /* Tamaño del texto */
-    font-weight: 400; /* Peso normal */
-    color: #4F4F4F; /* Color gris oscuro */
-    line-height: 1.5; /* Altura de línea para buena legibilidad */
-    margin: 0; /* Elimina el margen por defecto */
-    font-family: Arial, sans-serif; /* Fuente sans-serif limpia */
+    font-size: 14px; 
+    font-weight: 400; 
+    color: #4F4F4F; 
+    line-height: 1.5; 
+    margin: 0; 
+    font-family: Arial, sans-serif; 
 }
 
-h3{
-    font-size: 17px; /* Tamaño del texto */
+h3 {
+    font-size: 17px; 
     font-weight: 600;
-    color: #4F4F4F; /* Color gris oscuro */
-    line-height: 1.5; /* Altura de línea para buena legibilidad */
-    margin: 0; /* Elimina el margen por defecto */
-    font-family: Arial, sans-serif; /* Fuente sans-serif limpia */
+    color: #4F4F4F; 
+    line-height: 1.5; 
+    margin: 0; 
+    font-family: Arial, sans-serif; 
 }
-
-
 
 .container {
     max-width: 1000px;
@@ -257,22 +246,20 @@ h3{
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-
 .card-container {
     display: flex;
-    flex-direction: column; /* Alinea las tarjetas en columna */
-    gap: 10px; /* Espacio entre cada tarjeta */
+    flex-direction: column; 
+    gap: 10px; 
 }
 
 .card-row {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    
 }
 
 .card {
-    width: 100%; /* Ocupa todo el ancho del contenedor */
+    width: 100%; 
     display: flex;
     align-items: center;
     padding: 15px;
@@ -295,7 +282,7 @@ h3{
     justify-content: center;
     align-items: center;
     margin-right: 15px;
-    color:#fff;
+    color: #fff;
 }
 
 .icon img {
@@ -333,24 +320,24 @@ h3{
     margin-bottom: 20px;
 }
 
-.card h3{
+.card h3 {
     text-align: left;
 }
 
-.card p{
+.card p {
     text-align: left;
 }
 
 .full-width {
-    width: 100%; /* Ocupar el 100% del ancho disponible */
+    width: 100%; 
 }
 
-.container h2{
+.container h2 {
     text-align: left;
 }
 
 .close-btn {
-    position: fixed; /* Cambié 'absolute' por 'fixed' para mantenerla visible al hacer scroll */
+    position: fixed; 
     top: 10px;
     right: 20px;
     font-size: 24px;
@@ -363,7 +350,80 @@ h3{
 }
 
 .close-btn:hover {
-    color: red; /* El hover cambia el color a rojo */
+    color: red; 
     background-color: #ffcece;
 }
 
+a {
+    text-decoration: none; 
+    color: inherit; 
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-bar {
+        flex-direction: column;
+    }
+
+    .search-bar input {
+        width: 100%; 
+        margin-bottom: 10px; 
+    }
+
+    .search-bar button {
+        width: 100%; 
+    }
+
+    .help-options {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .help-card {
+        width: 100%; 
+        max-width: 400px; 
+    }
+
+    .card-container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .card-row {
+        flex-direction: column; 
+        width: 100%; 
+    }
+
+    .card {
+        width: 100%; 
+        margin-right: 0; 
+        margin-bottom: 10px; 
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px; 
+    }
+
+    h2 {
+        font-size: 18px; 
+    }
+
+    h3 {
+        font-size: 16px; 
+    }
+
+    p {
+        font-size: 12px; 
+    }
+
+    .hero {
+        padding: 20px 10px; 
+    }
+}
