@@ -92,7 +92,7 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 7.0rem;
+    font-size: 6.0rem;
     font-family: "Pixelify Sans", sans-serif;
     font-weight: 400;
     letter-spacing: 2px;
@@ -154,7 +154,7 @@ header p {
     color: #9ca3af;
     margin-bottom: 1rem;
     padding: 20px 20px;
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-shadow: 4px 4px 6px #0008;
 }
 
@@ -163,7 +163,7 @@ header p {
     color: white;
     border-color: #F797FC;
     padding: 1rem 2rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
     cursor: pointer;
     border-radius: 0.5rem;
     transition: 0.3s;
@@ -199,7 +199,7 @@ header p {
     border-radius: 0.5rem;
     padding: 1rem;
     margin-bottom: 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     
 }
 
