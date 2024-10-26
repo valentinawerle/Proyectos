@@ -51,7 +51,7 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 8vw; /* Ajusta el tamaño según el ancho de la pantalla */
+    font-size: 5vw; /* Ajusta el tamaño según el ancho de la pantalla */
     font-family: "Pixelify Sans", sans-serif;
     font-weight: 400;
     letter-spacing: 2px;
