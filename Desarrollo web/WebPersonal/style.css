@@ -294,8 +294,10 @@ header p {
 }
 
 .stack-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 2rem;
     color: #202430;
 }
@@ -416,9 +418,5 @@ button[type="submit"]:hover {
 
     .about-image {
         width: 40%;
-    }
-
-    .stack-grid {
-        grid-template-columns: repeat(8, 1fr);
     }
 }
