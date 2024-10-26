@@ -60,15 +60,20 @@ h1 {
 }
 
 @media (max-width: 768px) {
+    .typewriter{
+        width: 90%; /*Agregas un de ancho al contenedor para movil*/
+    }
     h1 {
-        font-size: 10vw; /* Un poco más pequeño en pantallas medianas */
+        font-size: 1.7rem; /* Un poco más pequeño en pantallas medianas */
         padding-bottom: 10px;
+        letter-spacing: normal;
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 12vw; /* Más pequeño para pantallas pequeñas */
+        font-size: 1.7rem; /* Más pequeño para pantallas pequeñas */
+        letter-spacing: normal;
     }
 }
 
@@ -149,7 +154,7 @@ header p {
     }
 
     h1 {
-        font-size: 4.0rem;
+        /* font-size: 4.0rem; */
         padding-bottom: 10px;
     }
 
@@ -175,7 +180,7 @@ header p {
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 3.2rem;
+        /* font-size: 3.2rem; */
     }
 
     h2 {
