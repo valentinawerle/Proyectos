@@ -1,0 +1,33 @@
+h1 {
+    font-size: 5rem;
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    text-wrap: balance;
+}
+
+@media (width < 600px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+}

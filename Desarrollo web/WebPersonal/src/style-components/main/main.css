@@ -1,0 +1,18 @@
+main {
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            padding-top: calc(var(--padding-uniform) * 6);
+            padding-bottom: calc(var(--padding-uniform) * 6);
+        }
+    }
+}
+
+@media (width < 800px) {
+    .main-article__div {
+        flex-direction: column;
+    }
+}

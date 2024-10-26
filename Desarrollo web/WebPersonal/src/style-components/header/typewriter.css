@@ -1,0 +1,9 @@
+.typewriter-text {
+    user-select: none;
+}
+
+.typewriter-cursor {
+    background-color: #f797fc;
+    color: #f797fc;
+    animation: blink 0.8s infinite;
+}

@@ -1,0 +1,27 @@
+document.getElementById('miFormulario').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = {
+        nombre: document.getElementById('nombre').value,
+        correo: document.getElementById('correo').value,
+        tipo: document.getElementById('tipo').value,
+        mensaje: document.getElementById('mensaje').value
+    };
+
+    fetch('https://magicloops.dev/api/loop/run/14eb826b-7d85-4fee-b321-6048b3da8f33', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Éxito:', data);
+        alert('Datos enviados correctamente.');
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert('Ocurrió un error al enviar los datos.');
+    });
+});

@@ -1,0 +1,29 @@
+header {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #202430;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        gap: calc(var(--gap-uniform) * 3);
+
+        h2 {
+            color: #9ca3af;
+        }
+    }
+}

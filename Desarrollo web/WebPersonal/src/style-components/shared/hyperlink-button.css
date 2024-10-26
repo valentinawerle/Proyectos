@@ -1,0 +1,10 @@
+.hyperlink-button--download {
+    color: white;
+    border: solid 1px #F797FC;
+    font-size: 1.2rem;
+    transition: 0.3s;
+    background-color: #202430;
+    padding: var(--padding-uniform);
+    border-radius: var(--border-radius-uniform);
+    text-decoration: none;
+}

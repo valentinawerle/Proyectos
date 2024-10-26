@@ -1,0 +1,36 @@
+.about__div {
+    display: flex;
+    gap: calc(var(--gap-uniform) * 2);
+}
+
+.about-text__section {
+    display: flex;
+    align-items: center;
+
+    p {
+        margin: auto;
+        max-width: 400px;
+        height: auto;
+        line-height: 1.5;
+        text-wrap: pretty;
+        border: 1px solid #F797FC;
+        padding: var(--padding-uniform);
+        border-radius: var(--border-radius-uniform);
+    }
+}
+
+.about-image__section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-uniform);
+
+    .image {
+        margin: auto;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: var(--gap-uniform);
+    }
+}

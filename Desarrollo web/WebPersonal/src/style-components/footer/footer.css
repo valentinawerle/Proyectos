@@ -1,0 +1,22 @@
+footer {
+    h2 {
+        padding-top: calc(var(--padding-uniform) * 6);
+        padding-bottom: calc(var(--padding-uniform) * 6);
+    }
+
+    section:last-child {
+        display: flex;
+        justify-content: center;
+        gap: calc(var(--gap-uniform) * 2);
+        padding: calc(var(--padding-uniform) * 4);
+
+        a {
+            text-decoration: none;
+
+            i {
+                font-size: 2rem;
+                text-decoration: none;
+            }
+        }
+    }
+}
