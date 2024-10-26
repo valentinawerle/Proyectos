@@ -18,6 +18,7 @@ html {
     scroll-snap-stop: always;
 }
 
+
 body {
     font-family: sans-serif;
     line-height: 1.6;
@@ -381,6 +382,7 @@ header p {
     justify-content: center;
     align-items: center;
     padding: 2rem 0;
+    height: 90vh;
 }
 
 #contactForm {
@@ -476,12 +478,12 @@ button[type="submit"]:hover {
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .social-icons a {
     color: #F797FC;
-    font-size: 1.5rem;
+    font-size: 2rem;
     transition: transform 0.3s, color 0.3s;
 }
 
