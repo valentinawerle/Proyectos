@@ -71,6 +71,7 @@ h1 {
         font-size: 1.7rem; /* Un poco más pequeño en pantallas medianas */
         padding-bottom: 10px;
         letter-spacing: normal;
+        max-width: 300px;
     }
 }
 
