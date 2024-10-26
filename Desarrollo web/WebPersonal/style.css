@@ -25,6 +25,17 @@ body {
     background-color: #202430;
 }
 
+/* Para mantener el footer en el fondo de la ventana cuando hay poco contenido */
+body, html {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Para que el contenido principal ocupe el espacio disponible */
+}
+
 .container {
     max-width: 1024px;
     margin: 0 auto;
@@ -194,7 +205,6 @@ header p {
 
     h3{
         font-size: 1.5rem;
-
     }
 
     header p {
@@ -450,4 +460,32 @@ button[type="submit"]:hover {
     .about-image {
         width: 40%;
     }
+}
+
+/* Estilos generales para el footer */
+#footer {
+    background-color: transparent;
+    padding: 1.5rem 0;
+    text-align: center;
+    height: 100vh;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-icons a {
+    color: #F797FC;
+    font-size: 1.5rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #fff;
+    transform: scale(1.1);
 }
