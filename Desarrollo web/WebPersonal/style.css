@@ -420,3 +420,36 @@ button[type="submit"]:hover {
         width: 40%;
     }
 }
+h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: 400;
+    letter-spacing: clamp(1px, 0.2vw, 2px);
+    padding-bottom: clamp(10px, 2vw, 20px);
+    text-shadow: 4px 4px 6px #0008;
+    hyphens: manual; /* Permite control sobre el guionado */
+    overflow-wrap: break-word; /* Permite romper palabras largas */
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 480px) {
+    h1 {
+        font-size: clamp(2rem, 6vw, 2.5rem); /* Reduce un poco el tamaño */
+        white-space: normal; /* Permite el salto de línea */
+        line-height: 1.2; /* Ajusta el espaciado entre líneas */
+    }
+    
+    /* Si el h1 está dentro de .typewriter, ajustamos la animación */
+    .typewriter h1 {
+        white-space: pre-wrap; /* Permite saltos de línea manteniendo espacios */
+        border-right: none; /* Removemos el cursor al final */
+    }
+}
+
+/* Ajuste específico para la animación de typewriter en móviles */
+@media (max-width: 480px) {
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+}
