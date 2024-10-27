@@ -6,6 +6,7 @@
     gap: calc(var(--gap-uniform) * 2);
     padding: var(--padding-uniform);
     background-color: #1a1e28;
+    transition: box-shadow 0.3s;
     box-shadow: 0 6px 12px #000000b3, 0 4px 8px #00000080;
 
     div {
@@ -45,6 +46,19 @@
 
     button:hover {
         background-color: #3a3e4d;
-        transform: scale(1.02);
     }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+        border-color: #f797fc;
+        background-color: #333b4d;
+        outline: none;
+    }
+
+}
+
+
+.form-contact:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8), 0 6px 12px rgba(0, 0, 0, 0.6);
 }
