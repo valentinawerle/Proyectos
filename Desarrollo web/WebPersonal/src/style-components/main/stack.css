@@ -16,14 +16,25 @@
 
     width: 100%;
     margin: auto;
+}
 
-    .stack-skill {
-        display: flex;
-        flex-direction: column;
-        gap: var(--gap-uniform);
 
-        span {
-            text-align: center;
-        }
+.stack-skill {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-uniform);
+
+    span {
+        text-align: center;
+        color: transparent;
+        transition: color 0.3s linear;
+    }
+}
+
+
+.stack-skill:hover {
+    span {
+        text-align: center;
+        color: #ffffff;
     }
 }

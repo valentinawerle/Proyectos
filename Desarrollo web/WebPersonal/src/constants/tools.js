@@ -1,12 +1,12 @@
 const tools = [
-    { name: 'Jira', icon: 'https://cdn-icons-png.flaticon.com/512/5968/5968875.png' },
-    { name: 'Linux', icon: 'https://img.icons8.com/?size=100&id=17842&format=png&color=000000' },
-    { name: 'Figma', icon: 'https://img.icons8.com/?size=100&id=W0YEwBDDfTeu&format=png&color=000000' },
-    { name: 'Postman', icon: 'https://cdn.iconscout.com/icon/free/png-256/free-cartero-3628992-3030217.png?f=webp' },
-    { name: 'VS Code', icon: 'https://img.icons8.com/?size=100&id=9OGIyU8hrxW5&format=png&color=000000' },
-    { name: 'GitHub', icon: 'https://img.icons8.com/m_sharp/200/FFFFFF/github.png' },
-    { name: 'SQL', icon: 'https://img.icons8.com/?size=100&id=qGUfLiYi1bRN&format=png&color=000000' },
-    { name: 'Notion', icon: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png' },
+    { name: 'Jira', icon: './public/icons/tools/jira.png' },
+    { name: 'Linux', icon: './public/icons/tools/linux.png' },
+    { name: 'Figma', icon: './public/icons/tools/figma.png' },
+    { name: 'Postman', icon: './public/icons/tools/postman.webp' },
+    { name: 'VS Code', icon: './public/icons/tools/vscode.png' },
+    { name: 'GitHub', icon: './public/icons/tools/github.png' },
+    { name: 'SQL', icon: './public/icons/tools/sql.png' },
+    { name: 'Notion', icon: './public/icons/tools/notion.png' },
 ];
 
 export { tools };
