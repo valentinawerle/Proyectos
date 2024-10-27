@@ -1,19 +1,16 @@
-@import url("./src/style-components/header/header.css");
-@import url("./src/style-components/header/typewriter.css");
+@import url("./src/styles/components/header/header.css");
 
-@import url("./src/style-components/main/main.css");
-@import url("./src/style-components/main/about.css");
-@import url("./src/style-components/main/stack.css");
+@import url("./src/styles/components/main/main.css");
 
-@import url("./src/style-components/footer/footer.css");
-@import url("./src/style-components/footer/form-contact.css");
+@import url("./src/styles/components/footer/footer.css");
 
-@import url("./src/style-components/shared/titles.css");
-@import url("./src/style-components/shared/hyperlink-button.css");
-@import url("./src/style-components/shared/image.css");
-@import url("./src/style-components/shared/icon.css");
+@import url("./src/styles/shared/hyperlink-button.css");
+@import url("./src/styles/shared/icon.css");
+@import url("./src/styles/shared/image.css");
+@import url("./src/styles/shared/particles.css");
+@import url("./src/styles/shared/titles.css");
 
-@import url("./src/style-components/animations/typing.css");
+@import url("./src/styles/animations/typing.css");
 
 :root {
     --padding-uniform: 20px;

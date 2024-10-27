@@ -1,3 +1,5 @@
+@import url("./form-contact.css");
+
 footer {
     h2 {
         padding-top: calc(var(--padding-uniform) * 6);
