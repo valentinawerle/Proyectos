@@ -1,7 +1,7 @@
 .stack__div {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--gap-uniform) * 6);
+    gap: calc(var(--gap-uniform) * 2);
 
     h3 {
         padding-bottom: calc(var(--padding-uniform) * 3);

@@ -1,11 +1,7 @@
 @import url("./form-contact.css");
 
-footer {
-    h2 {
-        padding-top: calc(var(--padding-uniform) * 6);
-        padding-bottom: calc(var(--padding-uniform) * 6);
-    }
 
+footer {
     section:last-child {
         display: flex;
         justify-content: center;

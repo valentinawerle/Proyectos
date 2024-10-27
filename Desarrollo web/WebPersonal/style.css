@@ -30,4 +30,9 @@ body {
     background-color: #202430;
     width: 95%;
     margin: auto;
+
+    h2 {
+        padding-top: calc(var(--padding-uniform) * 10);
+        padding-bottom: calc(var(--padding-uniform) * 8);
+    }
 }
