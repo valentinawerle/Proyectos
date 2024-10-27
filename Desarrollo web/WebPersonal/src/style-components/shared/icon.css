@@ -11,13 +11,17 @@
 }
 
 .icon:hover {
-    color: #ffffff;
     transform: scale(1.2);
 }
 
 .icon--social-networking {
     width: 35px;
     height: 35px;
+    color: #f797fc;
+}
+
+.icon--social-networking:hover {
+    color: #f797fccc;
 }
 
 .icon-stack {
