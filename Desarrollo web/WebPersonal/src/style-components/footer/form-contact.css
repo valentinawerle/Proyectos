@@ -58,7 +58,6 @@
 
 }
 
-
 .form-contact:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8), 0 6px 12px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 8px 16px #000000cc, 0 6px 12px #00000099;
 }
