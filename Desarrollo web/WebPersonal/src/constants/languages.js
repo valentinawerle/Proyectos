@@ -1,5 +1,5 @@
 const languages = [
-    { name: 'Python', icon: './src/assets/icons/languages/python.svg' },
+    { name: 'Python', icon: './src/assets/icons/languages/python.png' },
     { name: 'Java', icon: './src/assets/icons/languages/java.png' },
     { name: 'TypeScript', icon: './src/assets/icons/languages/type-script.png' },
     { name: 'JavaScript', icon: './src/assets/icons/languages/java-script.png' },
