@@ -7,4 +7,9 @@
     padding: var(--padding-uniform);
     border-radius: var(--border-radius-uniform);
     text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.hyperlink-button--download:hover {
+    transform: scale(1.1);
 }

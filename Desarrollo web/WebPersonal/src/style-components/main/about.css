@@ -1,6 +1,6 @@
 .about__div {
     display: flex;
-    gap: calc(var(--gap-uniform) * 2);
+    gap: calc(var(--gap-uniform) * 4);
 }
 
 .about-text__section {
@@ -8,8 +8,7 @@
     align-items: center;
 
     p {
-        margin: auto;
-        max-width: 400px;
+        max-width: 380px;
         height: auto;
         line-height: 1.5;
         text-wrap: pretty;
