@@ -1,0 +1,17 @@
+@import url("./about.css");
+@import url("./stack.css");
+
+
+main {
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (width < 800px) {
+    .main-article__div {
+        flex-direction: column;
+    }
+}

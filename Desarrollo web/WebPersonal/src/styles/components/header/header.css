@@ -1,0 +1,23 @@
+@import url("./typewriter.css");
+
+header {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        gap: calc(var(--gap-uniform) * 3);
+
+        h2 {
+            color: #9ca3af;
+            padding: 0;
+        }
+    }
+}

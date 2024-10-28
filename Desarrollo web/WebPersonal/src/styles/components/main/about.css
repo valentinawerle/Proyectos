@@ -1,0 +1,32 @@
+.about__div {
+    display: flex;
+    gap: calc(var(--gap-uniform) * 4);
+}
+
+.about-text__section {
+    p {
+        max-width: 380px;
+        height: 380px;
+        line-height: 1.5;
+        text-wrap: pretty;
+        border: 1px solid #f797fc;
+        padding: var(--padding-uniform);
+        border-radius: var(--border-radius-uniform);
+    }
+}
+
+.about-image__section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-uniform);
+
+    .image {
+        margin: auto;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: var(--gap-uniform);
+    }
+}

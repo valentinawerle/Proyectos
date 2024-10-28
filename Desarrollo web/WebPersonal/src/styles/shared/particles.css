@@ -1,0 +1,8 @@
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #202430;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

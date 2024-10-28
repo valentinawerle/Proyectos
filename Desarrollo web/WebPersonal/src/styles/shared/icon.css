@@ -1,0 +1,37 @@
+.icon {
+    transition: transform 0.3s linear;
+
+    svg,
+    img,
+    i {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
+
+.icon:hover {
+    transform: scale3d(1.2, 1.2, 1.2);
+}
+
+.icon--social-networking {
+    width: 35px;
+    height: 35px;
+    color: #f797fc;
+}
+
+.icon--social-networking:hover {
+    color: #f797fccc;
+}
+
+.icon-stack {
+    width: 85px;
+    height: 85px;
+}
+
+@media (width < 800px) {
+    .icon-stack {
+        width: 65px;
+        height: 65px;
+    }
+}
