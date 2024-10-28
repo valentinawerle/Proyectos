@@ -4,68 +4,115 @@
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="styles.css">
     <style>
+       
+    body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #f0f2f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 10px; /* Padding para evitar el desbordamiento */
+    }
+
+    form {
+        width: 100%; /* Mantiene el 100% en pantallas pequeñas */
+        max-width: 600px; /* Ajusta el tamaño máximo del formulario */
+        padding: 30px;
+        border-radius: 12px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin: 15px 0 5px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 5px 0 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+        background-color: #f9f9f9;
+        transition: border-color 0.3s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        border-color: #4CAF50;
+        outline: none;
+    }
+
+    input[type="submit"] {
+        width: auto;
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+        transform: translateY(-2px);
+    }
+
+    /* Estilos responsive */
+    @media (max-width: 768px) {
         body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #f0f2f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+            height: 100vh; /* Asegura que el body ocupe toda la altura de la pantalla en móviles */
+            overflow: hidden; /* Oculta cualquier desbordamiento */
         }
-    
+
         form {
-            width: 70%;
-            max-width: 800px;
-            padding: 30px;
-            border-radius: 12px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px; /* Reduce el padding */
         }
-    
-    
-    
+
         label {
-            display: block;
-            margin: 15px 0 5px;
-            font-weight: 600;
-            color: #333;
+            font-size: 0.9rem; /* Reduce un poco el tamaño del texto */
         }
-    
+
         input, select, textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 5px 0 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            background-color: #f9f9f9;
-            transition: border-color 0.3s ease;
+            padding: 10px; /* Ajusta el padding */
+            font-size: 0.9rem; /* Ajusta el tamaño de la fuente */
         }
-    
-        input:focus, select:focus, textarea:focus {
-            border-color: #4CAF50;
-            outline: none;
-        }
-    
+
         input[type="submit"] {
-            width: auto;
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px 25px;
-            font-size: 1rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            padding: 10px 20px; /* Ajusta el padding del botón */
+            font-size: 0.9rem; /* Reduce el tamaño de la fuente en el botón */
         }
-    
-        input[type="submit"]:hover {
-            background-color: #45a049;
-            transform: translateY(-2px);
+    }
+
+    @media (max-width: 480px) {
+        form {
+            padding: 15px; /* Reduce aún más el padding */
+            max-width: 90%; /* Aumenta la ocupación en pantallas pequeñas */
         }
-    </style>
+
+        input, select, textarea {
+            padding: 8px; /* Ajusta aún más el padding */
+            font-size: 0.85rem; /* Ajusta el tamaño de la fuente */
+        }
+
+        input[type="submit"] {
+            padding: 8px 15px; /* Ajusta el padding del botón */
+            font-size: 0.85rem; /* Reduce el tamaño de la fuente en el botón */
+        }
+    }
+
+
+
+</style>
+
     
     
 </head>

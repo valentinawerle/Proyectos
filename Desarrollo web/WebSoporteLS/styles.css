@@ -363,67 +363,109 @@ a {
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+    }
+
+    .logo {
+        margin-right: auto; 
+    }
+
+    .logo img {
+        width: 60px; /* Reduce el tamaño del logo en móviles */
     }
 
     .search-bar {
-        flex-direction: column;
+        display: flex;
+        align-items: stretch; /* Asegura que el botón y la barra de búsqueda tengan la misma altura */
+        justify-content: center;
+        margin-bottom: 20px;
     }
-
+    
     .search-bar input {
-        width: 100%; 
-        margin-bottom: 10px; 
+        padding: 15px;
+        max-width: 400px;
+        border-radius: 10px 0 0 10px;
+        border: 0px solid #ccc; 
+        font-size: 18px;
+        height: auto; /* Ajusta el alto automáticamente */
     }
-
+    
     .search-bar button {
-        width: 100%; 
+        padding: 0 25px; /* Solo ancho de padding, sin alto */
+        border-radius: 0 10px 10px 0;
+        border: 0px solid #ccc; 
+        background-color: #fff;
+        color: #666;
+        font-size: 18px; /* Ajusta el tamaño de la fuente si es necesario */
+        cursor: pointer;
     }
-
+    
+    
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+        flex-wrap: nowrap; /* Asegura que los íconos estén en una sola fila */
+    }
+    
+    .social-links a {
+        padding: 10px; /* Ajusta el padding para que los íconos no sean demasiado grandes */
+        width: auto; /* Quita cualquier ajuste de ancho */
+        flex: none; /* Asegura que no se expandan para ocupar todo el ancho */
+    }
+    
     .help-options {
         flex-direction: column;
-        align-items: center; 
+        width: 100%;
+        align-items: center;
     }
 
     .help-card {
-        width: 100%; 
-        max-width: 400px; 
+        width: 90%; /* Reducir el ancho para móviles */
+        max-width: 400px;
     }
 
-    .card-container {
-        flex-direction: column; 
-        align-items: center; 
-    }
-
-    .card-row {
-        flex-direction: column; 
-        width: 100%; 
+    .card-container, .card-row {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
     .card {
-        width: 100%; 
-        margin-right: 0; 
-        margin-bottom: 10px; 
+        width: 90%;
+        max-width: 400px;
+        margin-bottom: 10px;
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 20px; 
+        font-size: 20px;
     }
 
     h2 {
-        font-size: 18px; 
+        font-size: 18px;
     }
 
     h3 {
-        font-size: 16px; 
+        font-size: 16px;
     }
 
     p {
-        font-size: 12px; 
+        font-size: 12px;
     }
 
     .hero {
-        padding: 20px 10px; 
+        padding: 20px 10px;
+    }
+
+    .help-card {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .background-container::before {
+        background: rgba(0, 0, 0, 0.6); /* Más oscuro en pantallas pequeñas para mejor contraste */
     }
 }
