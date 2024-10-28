@@ -4,15 +4,12 @@
 }
 
 .about-text__section {
-    display: flex;
-    align-items: center;
-
     p {
         max-width: 380px;
-        height: auto;
+        height: 380px;
         line-height: 1.5;
         text-wrap: pretty;
-        border: 1px solid #F797FC;
+        border: 1px solid #f797fc;
         padding: var(--padding-uniform);
         border-radius: var(--border-radius-uniform);
     }

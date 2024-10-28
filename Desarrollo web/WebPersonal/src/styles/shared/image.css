@@ -13,8 +13,11 @@
     height: 380px;
 
     img {
-        background-color: #d6924d;
-        border-radius: 50%;
+
+        border-radius: 20px 20px 0 0;
+        background-color: #63748d;
+
+        mask-image: linear-gradient(#63748d 20%, transparent);
     }
 }
 
