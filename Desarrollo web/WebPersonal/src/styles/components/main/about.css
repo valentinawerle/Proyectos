@@ -6,8 +6,7 @@
 .about-text__section {
     p {
         max-width: 380px;
-        height: 380px;
-        line-height: 1.5;
+        min-height: 380px;
         text-wrap: pretty;
         border: 1px solid #f797fc;
         padding: var(--padding-uniform);
