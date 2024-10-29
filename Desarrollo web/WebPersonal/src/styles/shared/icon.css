@@ -1,5 +1,5 @@
 .icon {
-    transition: transform 0.3s linear;
+    transition: transform var(--transition-seconds-uniform) linear;
 
     svg,
     img,

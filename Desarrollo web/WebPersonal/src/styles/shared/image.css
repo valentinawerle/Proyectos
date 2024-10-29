@@ -14,10 +14,24 @@
 
     img {
 
-        border-radius: 20px 20px 0 0;
-        background-color: #63748d;
+        border-radius: var(--border-radius-uniform) var(--border-radius-uniform) 0 0;
 
-        mask-image: linear-gradient(#63748d 20%, transparent);
+        /*
+
+        background-color: #63748d;  Blue Gray
+        background-color: #ffb6c1;  Light Pink
+        background-color: #e6e6fa;  Lavender
+        background-color: #87ceeb;  Sky Blue
+        background-color: #f5f5dc;  Beige
+        
+        */
+
+        background-color: #ffb6c1;
+
+
+        object-fit: scale-down;
+
+        mask-image: linear-gradient(#ffffff 20%, transparent);
     }
 }
 

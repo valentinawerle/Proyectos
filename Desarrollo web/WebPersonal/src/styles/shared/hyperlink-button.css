@@ -1,13 +1,12 @@
 .hyperlink-button--download {
     color: white;
     border: solid 1px #F797FC;
-    font-size: 1.2rem;
-    transition: 0.3s;
+    font-size: 1.5rem;
     background-color: #202430;
     padding: var(--padding-uniform);
     border-radius: var(--border-radius-uniform);
     text-decoration: none;
-    transition: transform 0.3s ease;
+    transition: filter var(--transition-seconds-uniform) linear;
 }
 
 .hyperlink-button--download:hover {

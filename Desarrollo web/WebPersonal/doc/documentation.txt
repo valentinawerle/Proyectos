@@ -1,60 +1,72 @@
-⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝
+⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝
 
-Hola Valen!
+¡Hola ValenWerle!
 
-Espero que no te moleste que haya realizado modificaciones en este proyecto.
-Mi intención es que te sirva como una guía para implementar en tu propio trabajo.
-He escrito esta documentación con la esperanza de haberme expresado de manera
-clara, para que puedas entender el motivo de los cambios y así decidir si deseas
-implementarlos o no.
+Espero que no te incomode que haya realizado algunas modificaciones en el proyecto.
+Mi objetivo es que esta guía te sirva para tu propio trabajo.
 
-Aún hay varios aspectos que se pueden mejorar en este proyecto, y seguiré
-trabajando en ello.
+He redactado esta documentación para explicarte de manera clara los motivos detrás
+de los cambios, para que puedas decidir si deseas implementarlos o no.
+Siéntete libre de considerar o pasar por alto estas modificaciones según
+tu criterio; mi intención es simplemente contribuir a tu proyecto.
 
-Quiero aclarar que decidí colaborar en tu repositorio únicamente con el propósito
-de aprender y mejorar como desarrollador, sin esperar nada a cambio de tu parte.
+Todavía hay varios aspectos que se pueden mejorar, y seguiré trabajando en ello.
 
-Espero que mi colaboración te ayude.
+Quiero aclarar que he colaborado en tu repositorio únicamente para aprender y crecer
+como desarrollador, sin esperar nada a cambio.
+
+Espero que mi colaboración te resulte útil.
 
 ⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝⚝
 
 
 Documentación de Cambios Realizados
 
-⚝ Reordenación de Etiquetas en <head>: Reorganicé las etiquetas dentro de la sección <head> para mejorar la legibilidad y garantizar el orden correcto de carga de los archivos.
 
-⚝ Uso de defer en el Script de Partículas: Agregué el atributo defer al script de JavaScript de las partículas, permitiendo su importación dentro de <head> y asegurando que el DOM se cargue primero.
 
-⚝ Módulos en el Script Principal: Transformé el script principal en un módulo, lo que facilita su importación dentro de <head> y asegura la carga previa del DOM.
+Mejora de la Presentación
 
-⚝ Cambio de Botón de Descarga: Reemplacé el tag <button> de "My Resume" por un enlace (<a>) de descarga para mejorar la usabilidad.
+⚝ Favicon agregado: Se añadió un icono distintivo para mejorar la presentación del sitio web.
+⚝ Reemplazo de '<button>' por '<a>': Se mejoró la usabilidad y la estructura semántica utilizando un enlace de descarga.
+⚝ Edición de iconos de Stack: Se optimizó la presentación visual de los iconos.
+⚝ Implementación de efecto typewriting en JavaScript: Se mejoró el rendimiento y la funcionalidad del efecto.
+⚝ Refactorización de código CSS: Mejora el diseño responsivo.
+⚝ Efecto en la fotografía: Mejora la presentación (considerar cambiar la foto por una de mayor calidad y profesionalismo).
+⚝ Implementación de variables CSS para padding, gap y border-radius: Mejora la consistencia y el estilo uniforme de la presentación.
+⚝ Implementación de variable para los segundos de la transición: Garantiza una consistencia de estilo.
 
-⚝ Incorporación de la Etiqueta <main>: Añadí la etiqueta <main> para delimitar el contenido principal del documento, mejorando la estructura semántica.
 
-⚝ Control de Imagen Mejorado: Encerré la foto en un <div> para tener un mejor control y estilo de la imagen.
 
-⚝ Almacenamiento Local de la Foto: Descargué y almacené la foto dentro del proyecto, eliminando la dependencia de un servidor externo.
+Optimización de la Estructura del Documento
 
-⚝ Agrupación de SVGs: Coloqué los elementos SVG dentro de un <div> para facilitar el control de estilos y disposición.
+⚝ Reordenación de etiquetas '<meta>', '<link>' y '<script>' en '<head>': Mejoró la legibilidad y garantizó el orden correcto de carga de los archivos.
+⚝ Incorporación de la etiqueta '<main>': Se delimitó el contenido principal del documento, mejorando la estructura semántica.
+⚝ Moví el formulario de contacto dentro del '<footer>': Se mejoró la organización del documento.
+⚝ Eliminación de Scroll Snap Type: Se consideró potencialmente molesto para los usuarios.
+⚝ Cambio de texto en títulos: Corrección de mayúsculas, mejora de la consistencia del formato de texto.
 
-⚝ Formulario de Contacto en el Footer: Moví el formulario de contacto dentro del <footer> para mejorar la estructura del documento.
 
-⚝ Comentarios sobre Scroll Snap Type: Comenté las funcionalidades de scroll-snap-type y mandatory, considerándolas potencialmente molestas.
 
-⚝ Actualización de Encabezado: Reemplacé el tag <p> en el encabezado por un <h2>, ya que su contenido es importante y debe ser resaltado.
+Mejora de la Carga y Rendimiento
 
-⚝ Eliminación de Text Shadow: Quité el text-shadow para mejorar la legibilidad sobre el color de fondo.
+⚝ Uso de 'defer' en el script de partículas: Permitió su importación dentro de '<head>', asegurando que el DOM se cargue primero.
+⚝ Tratamiento de scripts JavaScript como módulos: Facilitó la importación dentro de '<head>' y aseguró la carga previa del DOM.
+⚝ Reestructuración de archivos CSS y JavaScript: Se centralizaron las importaciones en los archivos principales para un mejor control.
 
-⚝ Edición de Fotografía: Edité la fotografía para eliminar el fondo y aplicar un color personalizado.
 
-⚝ Aumento del Tamaño de la Fotografía: Aumenté el tamaño de la fotografía, destacando la actitud y seguridad que debe reflejar.
 
-⚝ Reordenamiento de Iconos de Stack: Reorganicé los iconos del stack para simular un tamaño desigual; no ajusté los tamaños debido a limitaciones de tiempo.
+Mejora de la Legibilidad
 
-⚝ Eliminación de Documentación Innecesaria: Eliminé la documentación redundante en el código, ya que los nombres de archivo y el propio código describen su propósito.
+⚝ Eliminación de 'text-shadow': Aumentó la legibilidad sobre el color de fondo.
+⚝ Reemplazo de '<p>' por '<h2>' para el texto "a software developer...": Se resaltó contenido importante.
 
-⚝ Reestructuración de Archivos CSS: Reestructuré los archivos CSS para un mejor control, centralizando las importaciones en el archivo CSS principal.
 
-⚝ Reestructuración de Archivos JS: Reorganicé los archivos JavaScript para mejorar el control, con las importaciones centralizadas en el archivo JS principal.
 
-⚝ Implementación de Efecto Typewriting: Cambié la implementación del efecto de "typewriting" a un código JavaScript, mejorando su rendimiento y funcionalidad.
+Optimización de Contenido y Recursos
+
+⚝ Encapsulación de imágenes dentro de un '<div>': Permitió un mejor control y estilo de las imágenes.
+⚝ Almacenamiento local de imágenes: Se eliminó la dependencia de un servidor externo.
+⚝ Eliminación de documentación innecesaria: Se consideró redundante, ya que los nombres de archivo y el propio código describen su propósito.
+⚝ Edición de fotografía: Se destacó la actitud y seguridad que se desea reflejar.
+⚝ Descarga de CV en formato PDF: Se agregó funcionalidad para descargar el CV en formato PDF.
+⚝ Compresión de imagenes: Mejora el rendimiento de la página al reducir el tamaño de los archivos.

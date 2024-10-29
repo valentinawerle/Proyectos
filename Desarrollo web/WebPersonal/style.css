@@ -16,6 +16,7 @@
     --padding-uniform: 20px;
     --gap-uniform: 20px;
     --border-radius-uniform: 10px;
+    --transition-seconds-uniform: 0.3s;
 }
 
 * {

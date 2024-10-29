@@ -27,7 +27,7 @@
     span {
         text-align: center;
         color: transparent;
-        transition: color 0.3s linear;
+        transition: color var(--transition-seconds-uniform) linear;
     }
 }
 

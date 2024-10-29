@@ -6,7 +6,7 @@
     gap: calc(var(--gap-uniform) * 2);
     padding: var(--padding-uniform);
     background-color: #1a1e28;
-    transition: box-shadow 0.3s;
+    transition: box-shadow var(--transition-seconds-uniform);
     box-shadow: 0 6px 12px #000000b3, 0 4px 8px #00000080;
 
     div {
@@ -26,7 +26,9 @@
         border: 1px solid #3a4458;
         border-radius: var(--border-radius-uniform);
         color: #ffffff;
-        transition: border-color 0.3s, background-color 0.3s;
+        transition:
+            border-color var(--transition-seconds-uniform) linear,
+            background-color var(--transition-seconds-uniform) linear;
     }
 
     textarea {
@@ -41,7 +43,6 @@
         font-weight: 600;
         text-transform: uppercase;
         cursor: pointer;
-        transition: background-color 0.3s, transform 0.3s;
     }
 
     button:hover {
