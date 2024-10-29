@@ -41,7 +41,32 @@ function createStackItems(items, containerId) {
 document.addEventListener('DOMContentLoaded', () => {
     createStackItems(languages, 'languages');
     createStackItems(tools, 'tools');
-
-    // Contact form handling
-    const contactForm = document.getElementById('contactForm')
 })
+
+//Envio de formulario
+document.getElementById('contactForm').addEventListener('submit', async function (event) {
+    event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData.entries()); // Convierte FormData a un objeto JSON
+
+    try {
+        const response = await fetch('https://formspree.io/f/xgveodaa', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+            alert('Message sent successfully!');
+            this.reset(); // Reinicia el formulario
+        } else {
+            alert('Failed to send message. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again later.');
+    }
+});
