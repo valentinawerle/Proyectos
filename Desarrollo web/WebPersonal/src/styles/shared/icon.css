@@ -8,6 +8,12 @@
         height: 100%;
         display: block;
     }
+
+    i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .icon:hover {
@@ -25,13 +31,7 @@
 }
 
 .icon-stack {
-    width: 85px;
-    height: 85px;
-}
-
-@media (width < 800px) {
-    .icon-stack {
-        width: 65px;
-        height: 65px;
-    }
+    max-width: 6vw;
+    min-width: 65px;
+    height: auto;
 }

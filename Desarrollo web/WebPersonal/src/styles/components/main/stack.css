@@ -13,9 +13,6 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--gap-uniform);
-
-    width: 100%;
-    margin: auto;
 }
 
 
