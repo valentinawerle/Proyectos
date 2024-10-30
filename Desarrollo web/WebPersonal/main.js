@@ -41,73 +41,32 @@ function createStackItems(items, containerId) {
 document.addEventListener('DOMContentLoaded', () => {
     createStackItems(languages, 'languages');
     createStackItems(tools, 'tools');
+})
 
-    // Contact form handling
-    const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const formData = {
-            fullName: this.fullName.value,
-            email: this.email.value,
-            userType: this.userType.value,
-            message: this.message.value
-        };
-        console.log('Form submitted:', formData);
-        // Aquí iría la lógica para enviar el formulario
-        alert('Formulario enviado con éxito!');
-        this.reset();
-    });
+//Envio de formulario
+document.getElementById('contactForm').addEventListener('submit', async function (event) {
+    event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData.entries()); // Convierte FormData a un objeto JSON
+
+    try {
+        const response = await fetch('https://formspree.io/f/xgveodaa', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+            alert('Message sent successfully!');
+            this.reset(); // Reinicia el formulario
+        } else {
+            alert('Failed to send message. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again later.');
+    }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// document.getElementById('miFormulario').addEventListener('submit', function(event) {
-//     event.preventDefault();
-
-//     // Recoger los datos del formulario
-//     const formData = {
-//         nombre: document.getElementById('nombre').value,
-//         correo: document.getElementById('correo').value,
-//         tipo: document.getElementById('tipo').value,
-//         mensaje: document.getElementById('mensaje').value
-//     };
-
-//     // Enviar los datos a la API
-//     fetch('https://magicloops.dev/api/loop/run/14eb826b-7d85-4fee-b321-6048b3da8f33', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(formData)
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//         console.log('Éxito:', data);
-//         alert('Datos enviados correctamente.');
-//     })
-//     .catch((error) => {
-//         console.error('Error:', error);
-//         alert('Ocurrió un error al enviar los datos.');
-//     });
-// });
