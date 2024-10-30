@@ -152,6 +152,7 @@ header p {
     background-color: #202430;
     color: white;
     border-color: #F797FC;
+    box-shadow: 0 0 5px #F797FC;
     padding: 1rem 2rem;
     font-size: 2rem;
     cursor: pointer;
@@ -240,6 +241,8 @@ header p {
 
 .about-text {
     border: 1px solid #F797FC;
+    box-shadow: 0 5px 10px #F797FC;
+    background-color: #2d3344;
     border-radius: 0.5rem;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -253,6 +256,26 @@ header p {
     height: 12rem;
     border-radius: 50%;
     margin-bottom: 1rem;
+    animation: glow 4s infinite alternate;
+}
+
+/* Glow Animation */
+@keyframes glow {
+  0% {
+    box-shadow:
+      0 0 5px #F797FC,
+      0 0 10px #F69CBE,
+      0 0 15px #ED84B8,
+      0 0 20px #D271A8;
+  }
+
+  100% {
+    box-shadow:
+      0 0 10px #F797FC,
+      0 0 20px #F69CBE,
+      0 0 30px #ED84B8,
+      0 0 40px #D271A8;
+  }
 }
 
 /* Enlaces Sociales */
@@ -432,6 +455,7 @@ button[type="submit"] {
     width: 100%;
     background-color: #2c2f3a;
     border: solid 1px #F797FC;
+    box-shadow: 0 0 3px #F797FC;
     color: #fff;
     padding: 0.75rem;
     font-size: 1rem;
