@@ -483,17 +483,6 @@ button[type="submit"]:hover {
     }
 }
 
-/* Estilos generales para el footer */
-#footer {
-    background-color: transparent;
-    padding: 1.5rem 0;
-    text-align: center;
-    height: 100vh;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
 .social-icons {
     display: flex;
     justify-content: center;
