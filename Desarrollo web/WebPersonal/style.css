@@ -259,24 +259,9 @@ header p {
     animation: glow 4s infinite alternate;
 }
 
-/* Glow Animation */
-@keyframes glow {
-  0% {
-    box-shadow:
-      0 0 5px #F797FC,
-      0 0 10px #F69CBE,
-      0 0 15px #ED84B8,
-      0 0 20px #D271A8;
-  }
 
-  100% {
-    box-shadow:
-      0 0 10px #F797FC,
-      0 0 20px #F69CBE,
-      0 0 30px #ED84B8,
-      0 0 40px #D271A8;
-  }
-}
+
+
 
 /* Enlaces Sociales */
 .social-links {
