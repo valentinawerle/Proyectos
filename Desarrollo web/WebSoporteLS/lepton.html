@@ -119,86 +119,188 @@
 <body>
 
     <a href="index.html" class="close-btn">&#10006;</a>
-    
 
     <form action="http://localhost:3000/submit-form" method="POST">
 
-    <input type="hidden" name="orgid" value="00DHs000000QSJA">
-    <input type="hidden" name="retURL" value="https://www.lepton.com.ar/web/soporte/soporte-tecnico">
+        <input type="hidden" name="orgid" value="00DHs000000QSJA">
+        <input type="hidden" name="retURL" value="https://www.lepton.com.ar/web/soporte/soporte-tecnico">
 
-    <!-- Nombre del contacto -->
-    <label for="name">Nombre y apellido *</label>
-    <input id="name" name="name" type="text" maxlength="80" required>
+        <!-- Selección de Tema -->
+        <label for="tema">Tema *</label>
+        <select id="tema" name="tema" required onchange="actualizarTipoCaso()">
+            <option value="">--Ninguno--</option>
+            <option value="Leptonpack - Focus3D">Leptonpack - Focus3D</option>
+            <option value="Leptonpack - Armarius 3D">Leptonpack - Armarius 3D</option>
+            <option value="Winmaker">Winmaker</option>
+            <option value="Leptonray">Leptonray</option>
+            <option value="Lepton Optimizer">Lepton Optimizer</option>
+            <option value="Lepton Optimizer Web">Lepton Optimizer Web</option>
+            <option value="Gcad">Gcad</option>
+            <option value="Gplus">Gplus</option>
+            <option value="Administración">Administración</option>
+            <option value="Claves">Claves</option>
+        </select>
 
-    <!-- Email -->
-    <label for="email">Email *</label>
-    <input id="email" name="email" type="email" maxlength="80" required>
+        <!-- Selección de Tipo de Caso -->
+        <label for="type">Tipo de Caso *</label>
+        <select id="type" name="type" required onchange="actualizarMotivoCaso()">
+            <option value="">--Ninguno--</option>
+        </select>
 
-    <!-- Teléfono -->
-    <label for="phone">Teléfono *</label>
-    <input id="phone" name="phone" type="text" maxlength="40" required>
+        <!-- Selección de Motivo del Caso -->
+        <label for="reason">Motivo del caso *</label>
+        <select id="reason" name="reason" required onchange="actualizarSistema()">
+            <option value="">--Ninguno--</option>
+        </select>
 
-    <!-- CUIT sin puntos ni guiones ( XXXXXXXXXXX ) -->
-    <label for="00NVL000001aA3V">CUIT *</label>
-    <input id="00NVL000001aA3V" name="00NVL000001aA3V" type="text" maxlength="22" required>
+        <!-- Selección de Sistema -->
+        <label for="00NVL000001XlM9">Sistema que utiliza *</label>
+        <select id="00NVL000001XlM9" name="00NVL000001XlM9" required>
+            <option value="">--Ninguno--</option>
+            <option value="Focus">Focus y Armarius</option>
+            <option value="Módulo Leptonray">Módulo Leptonray</option>
+            <option value="Lepton Optimizer">Lepton Optimizer</option>
+            <option value="Lepton Optimizer Web">Lepton Optimizer Web</option>
+            <option value="Winmaker">Winmaker</option>
+            <option value="Gcad">Gcad</option>
+            <option value="Gplus">Gplus</option>
+        </select>
 
-    <!-- Tipo de Caso -->
-    <label for="type">Tipo de Caso *</label>
-    <select id="type" name="type" required>
-        <option value="">--Ninguno--</option>
-        <option value="Soporte">Soporte</option>
-        <option value="Capacitación">Capacitación</option>
-        <option value="Implementación">Implementación</option>
-        <option value="Ventas">Ventas</option>
-        <option value="Administración">Administración</option>
-    </select>
+        <!-- Resto del formulario -->
+        <label for="name">Nombre y apellido *</label>
+        <input id="name" name="name" type="text" maxlength="80" required>
 
-    <!-- Motivo del caso -->
-    <label for="reason">Motivo del caso *</label>
-    <select id="reason" name="reason" required>
-        <option value="">--Ninguno--</option>
-        <option value="Consulta general">Consulta general</option>
-        <option value="CNC">CNC</option>
-        <option value="Curso">Curso</option>
-        <option value="Clave">Clave</option>
-        <option value="Administrativa">Administrativa</option>
-        <option value="Cobranzas">Cobranzas</option>
-        <option value="Ventas">Ventas</option>
-        <option value="Consulta de uso">Consulta de uso</option>
-    </select>
+        <label for="email">Email *</label>
+        <input id="email" name="email" type="email" maxlength="80" required>
 
-    <!-- Sistema que utiliza -->
-    <label for="00NVL000001XlM9">Sistema que utiliza *</label>
-    <select id="00NVL000001XlM9" name="00NVL000001XlM9" required>
-        <option value="">--Ninguno--</option>
-        <option value="Focus">Focus y Armarius</option>
-        <option value="Módulo Leptonray">Módulo Leptonray</option>
-        <option value="Lepton Optimizer">Lepton Optimizer</option>
-        <option value="Lepton Optimizer Web">Lepton Optimizer Web</option>
-        <option value="Winmaker">Winmaker</option>
-        <option value="Gcad">Gcad</option>
-        <option value="Gplus">Gplus</option>
-        <option value="Módulo CNC para Focus / Armarius">Módulo CNC para Focus / Armarius</option>
-        <option value="Lepton Optimizer con CNC">Lepton Optimizer con CNC</option>
-        <option value="Winmaker CNC">Winmaker CNC</option>
-    </select>
+        <label for="phone">Teléfono *</label>
+        <input id="phone" name="phone" type="text" maxlength="40" required>
 
-    <!-- N° Licencia (No es obligatorio) -->
-    <label for="00NVL000001aVXl">N° Licencia</label>
-    <input id="00NVL000001aVXl" name="00NVL000001aVXl" type="text" maxlength="255">
+        <label for="subject">Asunto *</label>
+        <input id="subject" name="subject" type="text" maxlength="80" required>
 
-    <!-- Asunto -->
-    <label for="subject">Asunto *</label>
-    <input id="subject" name="subject" type="text" maxlength="80" required>
+        <label for="description">Descripción del Caso *</label>
+        <textarea id="description" name="description" required></textarea>
 
-    <!-- Descripción -->
-    <label for="description">Descripción del Caso *</label>
-    <textarea id="description" name="description" required></textarea>
+        <input type="submit" value="Enviar">
+    </form>
 
-    <!-- Submit -->
-    <input type="submit" value="Enviar">
+    <script>
+        const opciones = {
+            "Leptonpack - Focus3D": {
+                "Soporte": {
+                    "Consulta General": null,
+                    "Consulta de uso": null,
+                    "CNC": { sistema: "Módulo CNC para Focus/Armarius" }
+                },
+                "Implementación": null
+            },
+            "Leptonpack - Armarius 3D": {
+                "Soporte": {
+                    "Consulta General": null,
+                    "Consulta de uso": null,
+                    "CNC": { sistema: "Módulo CNC para Focus/Armarius" }
+                },
+                "Implementación": null,
+                "Capacitación": {
+                    "Curso": null
+                }
+            },
+            "Winmaker": {
+                "Soporte": {
+                    "Consulta General": null,
+                    "Consulta de uso": null,
+                    "CNC": { sistema: "Winmaker CNC" }
+                },
+                "Implementación": null,
+                "Capacitación": {
+                    "Curso": null
+                }
+            },
+            "Leptonray": {
+                "Soporte": {
+                    "Consulta General": null,
+                    "Consulta de uso": null
+                },
+                "Capacitación": {
+                    "Curso": null
+                }
+            },
+            "Lepton Optimizer": {
+                "Soporte": {
+                    "Consulta General": null,
+                    "Consulta de uso": null,
+                    "CNC": { sistema: "Lepton Optimizer CNC" }
+                },
+                "Implementación": null,
+                "Capacitación": {
+                    "Curso": null
+                }
+            },
+            "Administración": {
+                "Administrativa": {
+                    "Consulta General": null,
+                    "Cobranzas": null
+                },
+                "Ventas": null
+            },
+            "Claves": {}
+        };
 
-</form>
+        function actualizarTipoCaso() {
+            const temaSelect = document.getElementById("tema");
+            const tipoCasoSelect = document.getElementById("type");
+            const motivoCasoSelect = document.getElementById("reason");
+            const sistemaSelect = document.getElementById("00NVL000001XlM9");
 
+            tipoCasoSelect.innerHTML = '<option value="">--Ninguno--</option>';
+            motivoCasoSelect.innerHTML = '<option value="">--Ninguno--</option>';
+            sistemaSelect.value = "";
+
+            const temaSeleccionado = temaSelect.value;
+            if (temaSeleccionado && opciones[temaSeleccionado]) {
+                const tiposDeCaso = Object.keys(opciones[temaSeleccionado]);
+                tiposDeCaso.forEach(tipo => {
+                    const option = document.createElement("option");
+                    option.value = tipo;
+                    option.textContent = tipo;
+                    tipoCasoSelect.appendChild(option);
+                });
+            }
+        }
+
+        function actualizarMotivoCaso() {
+            const temaSelect = document.getElementById("tema").value;
+            const tipoCasoSelect = document.getElementById("type").value;
+            const motivoCasoSelect = document.getElementById("reason");
+            const sistemaSelect = document.getElementById("00NVL000001XlM9");
+
+            motivoCasoSelect.innerHTML = '<option value="">--Ninguno--</option>';
+            sistemaSelect.value = "";
+
+            if (temaSelect && tipoCasoSelect && opciones[temaSelect][tipoCasoSelect]) {
+                const motivosDeCaso = opciones[temaSelect][tipoCasoSelect];
+                if (motivosDeCaso) {
+                    Object.keys(motivosDeCaso).forEach(motivo => {
+                        const option = document.createElement("option");
+                        option.value = motivo;
+                        option.textContent = motivo;
+                        motivoCasoSelect.appendChild(option);
+                    });
+                }
+            }
+        }
+
+        function actualizarSistema() {
+            const temaSelect = document.getElementById("tema").value;
+            const tipoCasoSelect = document.getElementById("type").value;
+            const motivoCasoSelect = document.getElementById("reason").value;
+            const sistemaSelect = document.getElementById("00NVL000001XlM9");
+
+            if (temaSelect && tipoCasoSelect && motivoCasoSelect && opciones[temaSelect][tipoCasoSelect][motivoCasoSelect]?.sistema) {
+                sistemaSelect.value = opciones[temaSelect][tipoCasoSelect][motivoCasoSelect].sistema;
+            }
+        }
+    </script>
 </body>
 </html>
