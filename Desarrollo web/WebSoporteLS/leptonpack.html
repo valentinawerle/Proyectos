@@ -131,30 +131,25 @@
             <option value="">--Ninguno--</option>
             <option value="Leptonpack - Focus3D">Leptonpack - Focus3D</option>
             <option value="Leptonpack - Armarius 3D">Leptonpack - Armarius 3D</option>
-            <option value="Winmaker">Winmaker</option>
             <option value="Leptonray">Leptonray</option>
-            <option value="Lepton Optimizer">Lepton Optimizer</option>
-            <option value="Lepton Optimizer Web">Lepton Optimizer Web</option>
-            <option value="Gcad">Gcad</option>
-            <option value="Gplus">Gplus</option>
-            <option value="Administración">Administración</option>
-            <option value="Claves">Claves</option>
         </select>
 
-        <!-- Selección de Tipo de Caso -->
+         <!-- Selección de Tipo de Caso -->
         <label for="type">Tipo de Caso *</label>
         <select id="type" name="type" required onchange="actualizarMotivoCaso()">
             <option value="">--Ninguno--</option>
         </select>
 
         <!-- Selección de Motivo del Caso -->
-        <label for="reason">Motivo del caso *</label>
-        <select id="reason" name="reason" required onchange="actualizarSistema()">
-            <option value="">--Ninguno--</option>
-        </select>
+        <div id="motivoCasoDiv" style="display: none;">
+            <label for="reason">Motivo del caso *</label>
+            <select id="reason" name="reason">
+                <option value="">--Ninguno--</option>
+            </select>
+        </div>
 
-        
 
+    
         <!-- Resto del formulario -->
         <label for="name">Nombre y apellido *</label>
         <input id="name" name="name" type="text" maxlength="80" required>
@@ -257,34 +252,34 @@
         }
 
         function actualizarMotivoCaso() {
-            const temaSelect = document.getElementById("tema").value;
-            const tipoCasoSelect = document.getElementById("type").value;
-            const motivoCasoSelect = document.getElementById("reason");
+    const temaSelect = document.getElementById("tema").value;
+    const tipoCasoSelect = document.getElementById("type").value;
+    const motivoCasoSelect = document.getElementById("reason");
+    const motivoCasoDiv = document.getElementById("motivoCasoDiv"); // Selecciona el div
 
-            motivoCasoSelect.innerHTML = '<option value="">--Ninguno--</option>';
+    // Restablece el contenido de "Motivo del caso"
+    motivoCasoSelect.innerHTML = '<option value="">--Ninguno--</option>';
 
-            if (temaSelect && tipoCasoSelect && opciones[temaSelect][tipoCasoSelect]) {
-                const motivosDeCaso = opciones[temaSelect][tipoCasoSelect];
-                if (motivosDeCaso) {
-                    Object.keys(motivosDeCaso).forEach(motivo => {
-                        const option = document.createElement("option");
-                        option.value = motivo;
-                        option.textContent = motivo;
-                        motivoCasoSelect.appendChild(option);
-                    });
-                }
-            }
+    // Muestra u oculta el campo "Motivo del caso" solo si "Soporte" está seleccionado
+    if (tipoCasoSelect === "Soporte") {
+        motivoCasoDiv.style.display = "block";
+        
+        // Añade opciones de motivo si existe una lista para "Soporte"
+        if (temaSelect && opciones[temaSelect] && opciones[temaSelect]["Soporte"]) {
+            const motivosDeCaso = opciones[temaSelect]["Soporte"];
+            Object.keys(motivosDeCaso).forEach(motivo => {
+                const option = document.createElement("option");
+                option.value = motivo;
+                option.textContent = motivo;
+                motivoCasoSelect.appendChild(option);
+            });
         }
+    } else {
+        motivoCasoDiv.style.display = "none"; // Oculta el campo si no es "Soporte"
+    }
+}
 
-        function actualizarSistema() {
-            const temaSelect = document.getElementById("tema").value;
-            const tipoCasoSelect = document.getElementById("type").value;
-            const motivoCasoSelect = document.getElementById("reason").value;
 
-            if (temaSelect && tipoCasoSelect && motivoCasoSelect && opciones[temaSelect][tipoCasoSelect][motivoCasoSelect]?.sistema) {
-                sistemaSelect.value = opciones[temaSelect][tipoCasoSelect][motivoCasoSelect].sistema;
-            }
-        }
     </script>
 </body>
 </html>
