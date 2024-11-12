@@ -4,7 +4,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="styles.css">
     <style>
-        body {
+          body {
         margin: 0;
         font-family: 'Roboto', sans-serif;
         background-color: #f0f2f5;
@@ -107,8 +107,6 @@
             font-size: 0.85rem; /* Reduce el tamaño de la fuente en el botón */
         }
     }
-
-
     </style>
 </head>
 <body>
@@ -121,9 +119,7 @@
         <label for="tema">Tema *</label>
         <select id="tema" name="tema" required onchange="actualizarTipoCaso()">
             <option value="Winmaker">Winmaker</option>
-            <option value="Lepton Optimizer">Lepton Optimizer</option>
-            <option value="Lepton Optimizer Web">Lepton Optimizer Web</option>
-            <!-- Asegúrate de que los valores coincidan con las claves de 'opciones' -->
+            <!-- Solo la opción de Winmaker está disponible -->
         </select>
 
         <!-- Selección de Tipo de Caso -->
@@ -139,40 +135,31 @@
                 <option value="">--Ninguno--</option>
             </select>
         </div>
-        
-         <!-- Resto del formulario -->
-         <label for="name">Nombre y apellido *</label>
-         <input id="name" name="name" type="text" maxlength="80" required>
- 
-         <label for="email">Email *</label>
-         <input id="email" name="email" type="email" maxlength="80" required>
- 
-         <label for="phone">Teléfono *</label>
-         <input id="phone" name="phone" type="text" maxlength="40" required>
- 
-         <label for="subject">Asunto *</label>
-         <input id="subject" name="subject" type="text" maxlength="80" required>
- 
-         <label for="description">Descripción del Caso *</label>
-         <textarea id="description" name="description" required></textarea>
- 
-         <input type="submit" value="Enviar">
+
+        <!-- Resto del formulario -->
+        <label for="name">Nombre y apellido *</label>
+        <input id="name" name="name" type="text" maxlength="80" required>
+
+        <label for="email">Email *</label>
+        <input id="email" name="email" type="email" maxlength="80" required>
+
+        <label for="phone">Teléfono *</label>
+        <input id="phone" name="phone" type="text" maxlength="40" required>
+
+        <label for="subject">Asunto *</label>
+        <input id="subject" name="subject" type="text" maxlength="80" required>
+
+        <label for="description">Descripción del Caso *</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <input type="submit" value="Enviar">
     </form>
 
     <script>
         const opciones = {
             "Winmaker": {
-                "Soporte": { "Consulta General": null, "Consulta de uso": null, "CNC": { sistema: "Winmaker CNC" } },
+                "Soporte": { "Consulta General": null, "Consulta de uso": null, "CNC": null },
                 "Implementación": null,
-                "Capacitación": { "Curso": null }
-            },
-            "Lepton Optimizer": {
-                "Soporte": { "Consulta General": null, "Consulta de uso": null, "CNC": { sistema: "Lepton Optimizer CNC" } },
-                "Implementación": null,
-                "Capacitación": { "Curso": null }
-            },
-            "Lepton Optimizer Web": {
-                "Soporte": { "Consulta General": null, "Consulta de uso": null },
                 "Capacitación": { "Curso": null }
             }
         };
@@ -182,11 +169,12 @@
             const tipoCasoSelect = document.getElementById("type");
             const motivoCasoSelect = document.getElementById("reason");
 
+            // Limpiar las opciones actuales
             tipoCasoSelect.innerHTML = '<option value="">--Ninguno--</option>';
             motivoCasoSelect.innerHTML = '<option value="">--Ninguno--</option>';
 
             const temaSeleccionado = temaSelect.value;
-            if (temaSeleccionado && opciones[temaSeleccionado]) {
+            if (temaSeleccionado === "Winmaker" && opciones[temaSeleccionado]) {
                 const tiposDeCaso = Object.keys(opciones[temaSeleccionado]);
                 tiposDeCaso.forEach(tipo => {
                     const option = document.createElement("option");
@@ -203,27 +191,26 @@
             const motivoCasoSelect = document.getElementById("reason");
             const motivoCasoDiv = document.getElementById("motivoCasoDiv");
 
+            // Limpiar las opciones de motivo y ocultar el div por defecto
             motivoCasoSelect.innerHTML = '<option value="">--Ninguno--</option>';
-            
-            if (tipoCasoSelect === "Soporte" && opciones[temaSelect] && opciones[temaSelect]["Soporte"]) {
-                motivoCasoDiv.style.display = "block";
-                const motivosDeCaso = opciones[temaSelect]["Soporte"];
-                Object.keys(motivosDeCaso).forEach(motivo => {
-                    const option = document.createElement("option");
-                    option.value = motivo;
-                    option.textContent = motivo;
-                    motivoCasoSelect.appendChild(option);
-                });
-            } else if (tipoCasoSelect === "Capacitación") {
-                motivoCasoDiv.style.display = "block";
-                const option = document.createElement("option");
-                option.value = "Curso";
-                option.textContent = "Curso";
-                motivoCasoSelect.appendChild(option);
-            } else {
-                motivoCasoDiv.style.display = "none";
+            motivoCasoDiv.style.display = "none";
+
+            if (temaSelect === "Winmaker" && tipoCasoSelect) {
+                const motivosDeCaso = opciones[temaSelect][tipoCasoSelect];
+                if (motivosDeCaso) {
+                    motivoCasoDiv.style.display = "block";
+                    Object.keys(motivosDeCaso).forEach(motivo => {
+                        const option = document.createElement("option");
+                        option.value = motivo;
+                        option.textContent = motivo;
+                        motivoCasoSelect.appendChild(option);
+                    });
+                }
             }
         }
+
+        // Inicializar el formulario con las opciones de Winmaker
+        document.addEventListener("DOMContentLoaded", actualizarTipoCaso);
     </script>
 </body>
 </html>
