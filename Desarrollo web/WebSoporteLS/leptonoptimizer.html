@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       
+    body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #f0f2f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 10px; /* Padding para evitar el desbordamiento */
+    }
+
+    form {
+        width: 100%; /* Mantiene el 100% en pantallas pequeñas */
+        max-width: 600px; /* Ajusta el tamaño máximo del formulario */
+        padding: 30px;
+        border-radius: 12px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin: 15px 0 5px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 5px 0 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+        background-color: #f9f9f9;
+        transition: border-color 0.3s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        border-color: #4CAF50;
+        outline: none;
+    }
+
+    input[type="submit"] {
+        width: auto;
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+        transform: translateY(-2px);
+    }
+
+    /* Estilos responsive */
+    @media (max-width: 768px) {
+        body {
+            height: 100vh; /* Asegura que el body ocupe toda la altura de la pantalla en móviles */
+            overflow: hidden; /* Oculta cualquier desbordamiento */
+        }
+
+        form {
+            padding: 20px; /* Reduce el padding */
+        }
+
+        label {
+            font-size: 0.9rem; /* Reduce un poco el tamaño del texto */
+        }
+
+        input, select, textarea {
+            padding: 10px; /* Ajusta el padding */
+            font-size: 0.9rem; /* Ajusta el tamaño de la fuente */
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px; /* Ajusta el padding del botón */
+            font-size: 0.9rem; /* Reduce el tamaño de la fuente en el botón */
+        }
+    }
+
+    @media (max-width: 480px) {
+        form {
+            padding: 15px; /* Reduce aún más el padding */
+            max-width: 90%; /* Aumenta la ocupación en pantallas pequeñas */
+        }
+
+        input, select, textarea {
+            padding: 8px; /* Ajusta aún más el padding */
+            font-size: 0.85rem; /* Ajusta el tamaño de la fuente */
+        }
+
+        input[type="submit"] {
+            padding: 8px 15px; /* Ajusta el padding del botón */
+            font-size: 0.85rem; /* Reduce el tamaño de la fuente en el botón */
+        }
+    }
+
+
+
+</style>
+
+    
+    
+</head>
+<body>
+
+    <a href="index.html" class="close-btn">&#10006;</a>
+
+    <form action="http://localhost:3000/submit-form" method="POST">
+
+        <input type="hidden" name="orgid" value="00DHs000000QSJA">
+        <input type="hidden" name="retURL" value="https://www.lepton.com.ar/web/soporte/soporte-tecnico">
+
+        <!-- Selección de Tema -->
+        <label for="tema">Tema *</label>
+        <select id="tema" name="tema" required onchange="actualizarTipoCaso()">
+            <option value="">--Ninguno--</option>
+            <option value="Lepton Optimizer">Lepton Optimizer</option>
+            <option value="Lepton Optimizer Web">Lepton Optimizer Web</option>
+        </select>
+
+         <!-- Selección de Tipo de Caso -->
+        <label for="type">Tipo de Caso *</label>
+        <select id="type" name="type" required onchange="actualizarMotivoCaso()">
+            <option value="">--Ninguno--</option>
+        </select>
+
+        <!-- Selección de Motivo del Caso -->
+        <div id="motivoCasoDiv" style="display: none;">
+            <label for="reason">Motivo del caso *</label>
+            <select id="reason" name="reason">
+                <option value="">--Ninguno--</option>
+            </select>
+        </div>
+
+
+    
+        <!-- Resto del formulario -->
+        <label for="name">Nombre y apellido *</label>
+        <input id="name" name="name" type="text" maxlength="80" required>
+
+        <label for="email">Email *</label>
+        <input id="email" name="email" type="email" maxlength="80" required>
+
+        <label for="phone">Teléfono *</label>
+        <input id="phone" name="phone" type="text" maxlength="40" required>
+
+        <label for="subject">Asunto *</label>
+        <input id="subject" name="subject" type="text" maxlength="80" required>
+
+        <label for="description">Descripción del Caso *</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+        const opciones = {
+            "Leptonpack - Focus3D": {
+                "Soporte": {
+                    "Consulta General": null,
+                    "Consulta de uso": null,
+                    "CNC": { sistema: "Módulo CNC para Focus/Armarius" }
+                },
+                "Implementación": null
+            },
+            "Leptonpack - Armarius 3D": {
+                "Soporte": {
+                    "Consulta General": null,
+                    "Consulta de uso": null,
+                    "CNC": { sistema: "Módulo CNC para Focus/Armarius" }
+                },
+                "Implementación": null,
+                "Capacitación": {
+                    "Curso": null
+                }
+            },
+            "Winmaker": {
+                "Soporte": {
+                    "Consulta General": null,
+                    "Consulta de uso": null,
+                    "CNC": { sistema: "Winmaker CNC" }
+                },
+                "Implementación": null,
+                "Capacitación": {
+                    "Curso": null
+                }
+            },
+            "Leptonray": {
+                "Soporte": {
+                    "Consulta General": null,
+                    "Consulta de uso": null
+                },
+                "Capacitación": {
+                    "Curso": null
+                }
+            },
+            "Lepton Optimizer": {
+                "Soporte": {
+                    "Consulta General": null,
+                    "Consulta de uso": null,
+                    "CNC": { sistema: "Lepton Optimizer CNC" }
+                },
+                "Implementación": null,
+                "Capacitación": {
+                    "Curso": null
+                }
+            },
+            "Administración": {
+                "Administrativa": {
+                    "Consulta General": null,
+                    "Cobranzas": null
+                },
+                "Ventas": null
+            },
+            "Claves": {}
+        };
+
+        function actualizarTipoCaso() {
+            const temaSelect = document.getElementById("tema");
+            const tipoCasoSelect = document.getElementById("type");
+            const motivoCasoSelect = document.getElementById("reason");
+
+            tipoCasoSelect.innerHTML = '<option value="">--Ninguno--</option>';
+            motivoCasoSelect.innerHTML = '<option value="">--Ninguno--</option>';
+
+            const temaSeleccionado = temaSelect.value;
+            if (temaSeleccionado && opciones[temaSeleccionado]) {
+                const tiposDeCaso = Object.keys(opciones[temaSeleccionado]);
+                tiposDeCaso.forEach(tipo => {
+                    const option = document.createElement("option");
+                    option.value = tipo;
+                    option.textContent = tipo;
+                    tipoCasoSelect.appendChild(option);
+                });
+            }
+        }
+
+        function actualizarMotivoCaso() {
+            const temaSelect = document.getElementById("tema").value;
+            const tipoCasoSelect = document.getElementById("type").value;
+            const motivoCasoSelect = document.getElementById("reason");
+            const motivoCasoDiv = document.getElementById("motivoCasoDiv");
+
+            motivoCasoSelect.innerHTML = '<option value="">--Ninguno--</option>';
+            
+            if (tipoCasoSelect === "Soporte" && opciones[temaSelect] && opciones[temaSelect]["Soporte"]) {
+                motivoCasoDiv.style.display = "block";
+                const motivosDeCaso = opciones[temaSelect]["Soporte"];
+                Object.keys(motivosDeCaso).forEach(motivo => {
+                    const option = document.createElement("option");
+                    option.value = motivo;
+                    option.textContent = motivo;
+                    motivoCasoSelect.appendChild(option);
+                });
+            } else if (tipoCasoSelect === "Capacitación") {
+                motivoCasoDiv.style.display = "block";
+                const option = document.createElement("option");
+                option.value = "Curso";
+                option.textContent = "Curso";
+                motivoCasoSelect.appendChild(option);
+            } else {
+                motivoCasoDiv.style.display = "none";
+            }
+        }
+
+
+    </script>
+</body>
+</html>
