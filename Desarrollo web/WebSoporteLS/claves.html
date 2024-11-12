@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+          body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #f0f2f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 10px; /* Padding para evitar el desbordamiento */
+    }
+
+    form {
+        width: 100%; /* Mantiene el 100% en pantallas pequeñas */
+        max-width: 600px; /* Ajusta el tamaño máximo del formulario */
+        padding: 30px;
+        border-radius: 12px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin: 15px 0 5px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 5px 0 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+        background-color: #f9f9f9;
+        transition: border-color 0.3s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        border-color: #4CAF50;
+        outline: none;
+    }
+
+    input[type="submit"] {
+        width: auto;
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+        transform: translateY(-2px);
+    }
+
+    
+    body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 10px;
+        }
+
+        form {
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            border-radius: 12px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            width: auto;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        /* Estilos para la nueva sección de "Tipo de clave" */
+        .clave-container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .clave-container label {
+            margin: 0;
+            font-weight: normal;
+            font-size: 1rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .tipo-clave {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .tipo-clave input {
+            margin-right: 5px; /* Alineación del botón de opción al lado del texto */
+        }
+
+    /* Estilos responsive */
+    @media (max-width: 768px) {
+        body {
+            height: 100vh; /* Asegura que el body ocupe toda la altura de la pantalla en móviles */
+            overflow: hidden; /* Oculta cualquier desbordamiento */
+        }
+
+        form {
+            padding: 20px; /* Reduce el padding */
+        }
+
+        label {
+            font-size: 0.9rem; /* Reduce un poco el tamaño del texto */
+        }
+
+        input, select, textarea {
+            padding: 10px; /* Ajusta el padding */
+            font-size: 0.9rem; /* Ajusta el tamaño de la fuente */
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px; /* Ajusta el padding del botón */
+            font-size: 0.9rem; /* Reduce el tamaño de la fuente en el botón */
+        }
+    }
+
+    @media (max-width: 480px) {
+        form {
+            padding: 15px; /* Reduce aún más el padding */
+            max-width: 90%; /* Aumenta la ocupación en pantallas pequeñas */
+        }
+
+        input, select, textarea {
+            padding: 8px; /* Ajusta aún más el padding */
+            font-size: 0.85rem; /* Ajusta el tamaño de la fuente */
+        }
+
+        input[type="submit"] {
+            padding: 8px 15px; /* Ajusta el padding del botón */
+            font-size: 0.85rem; /* Reduce el tamaño de la fuente en el botón */
+        }
+    }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="close-btn">&#10006;</a>
+
+    <form action="http://localhost:3000/submit-form" method="POST">
+
+        <input type="hidden" name="orgid" value="00DHs000000QSJA">
+        <input type="hidden" name="retURL" value="https://www.lepton.com.ar/web/soporte/soporte-tecnico">
+
+        <!-- Campos previos del formulario -->
+        <label for="name">Nombre y apellido *</label>
+        <input id="name" name="name" type="text" maxlength="80" required>
+
+        <label for="email">Email *</label>
+        <input id="email" name="email" type="email" maxlength="80" required>
+
+        <label for="phone">Teléfono *</label>
+        <input id="phone" name="phone" type="text" maxlength="40" required>
+
+        <label for="subject">Asunto *</label>
+        <input id="subject" name="subject" type="text" maxlength="80" required>
+
+        <label for="licencia">Número de licencia *</label>
+        <input id="licencia" name="licencia" type="number" required>
+
+        <!-- Nueva sección de "Tipo de clave" -->
+        <label>Tipo de clave *</label>
+        <div>
+            <label>
+                <input type="radio" name="tipo_clave" value="primera_vez" onclick="mostrarClaveHabilitacion(false)" required>
+                Primera vez
+            </label>
+            <label>
+                <input type="radio" name="tipo_clave" value="re_habilitacion" onclick="mostrarClaveHabilitacion(true)" required>
+                Re-habilitación
+            </label>
+        </div>
+
+        <!-- Campo de "Clave de habilitación", oculto por defecto -->
+        <div id="habilitacion-container" class="hidden">
+            <label for="habilitacion">Clave de habilitación *</label>
+            <input id="habilitacion" name="habilitacion" type="number">
+        </div>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+        // Función para mostrar u ocultar el campo de "Clave de habilitación"
+        function mostrarClaveHabilitacion(mostrar) {
+            const habilitacionContainer = document.getElementById("habilitacion-container");
+            if (mostrar) {
+                habilitacionContainer.classList.remove("hidden");
+            } else {
+                habilitacionContainer.classList.add("hidden");
+            }
+        }
+    </script>
+</body>
+</html>
