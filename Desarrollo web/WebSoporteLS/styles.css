@@ -154,7 +154,13 @@ h1 {
 
 h2 {
     font-size: 22px;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+small {
+    color: #666;
+    font-size: 0.9em;
 }
 
 .help-options {
