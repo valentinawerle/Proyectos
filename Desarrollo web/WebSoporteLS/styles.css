@@ -159,8 +159,20 @@ h2 {
 }
 
 small {
-    color: #666;
-    font-size: 0.9em;
+    display: block;
+    margin-top: 5px;
+    color: #777;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: 600;
+    color: #333;
+    text-align: left; /* Asegura que el texto esté alineado a la izquierda */
 }
 
 .help-options {

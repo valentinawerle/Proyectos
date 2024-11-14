@@ -159,8 +159,14 @@
         <label for="phone">Teléfono *</label>
         <input id="phone" name="phone" type="text" maxlength="40" required>
 
+        <label for="cuit">CUIT *</label>
+        <input id="cuit" name="cuit" type="text" placeholder="Ingrese su CUIT" required>
+        <small>(Si no sos de Argentina, ingresá tu código fiscal o de identificación tributaria de tu país)</small>
+
         <label for="licencia">Número de licencia</label>
         <input id="licencia" name="licencia" type="number">
+        <small>El Número de licencia puede encontrarlo en una etiqueta pegada en la llave de seguridad.</small>
+
 
         <label for="subject">Asunto *</label>
         <input id="subject" name="subject" type="text" maxlength="80" required>
@@ -172,66 +178,70 @@
     </form>
 
     <script>
-        const opciones = {
-            "Leptonpack - Focus3D": {
-                "Soporte": {
-                    "Consulta General": null,
-                    "Consulta de uso": null,
-                    "CNC": { sistema: "Módulo CNC para Focus/Armarius" }
-                },
-                "Implementación": null
-            },
-            "Leptonpack - Armarius 3D": {
-                "Soporte": {
-                    "Consulta General": null,
-                    "Consulta de uso": null,
-                    "CNC": { sistema: "Módulo CNC para Focus/Armarius" }
-                },
-                "Implementación": null,
-                "Capacitación": {
-                    "Curso": null
-                }
-            },
-            "Winmaker": {
-                "Soporte": {
-                    "Consulta General": null,
-                    "Consulta de uso": null,
-                    "CNC": { sistema: "Winmaker CNC" }
-                },
-                "Implementación": null,
-                "Capacitación": {
-                    "Curso": null
-                }
-            },
-            "Leptonray": {
-                "Soporte": {
-                    "Consulta General": null,
-                    "Consulta de uso": null
-                },
-                "Capacitación": {
-                    "Curso": null
-                }
-            },
-            "Lepton Optimizer": {
-                "Soporte": {
-                    "Consulta General": null,
-                    "Consulta de uso": null,
-                    "CNC": { sistema: "Lepton Optimizer CNC" }
-                },
-                "Implementación": null,
-                "Capacitación": {
-                    "Curso": null
-                }
-            },
-            "Administración": {
-                "Administrativa": {
-                    "Consulta General": null,
-                    "Cobranzas": null
-                },
-                "Ventas": null
-            },
-            "Claves": {}
-        };
+    const opcionesBaseLeptonOptimizer = {
+        "Soporte": {
+            "Consulta General": null,
+            "Consulta de uso": null,
+            "CNC": { sistema: "Lepton Optimizer CNC" }
+        },
+        "Implementación": null,
+        "Capacitación": {
+            "Curso": null
+        }
+    };
+
+const opciones = {
+    "Leptonpack - Focus3D": {
+        "Soporte": {
+            "Consulta General": null,
+            "Consulta de uso": null,
+            "CNC": { sistema: "Módulo CNC para Focus/Armarius" }
+        },
+        "Implementación": null
+    },
+    "Leptonpack - Armarius 3D": {
+        "Soporte": {
+            "Consulta General": null,
+            "Consulta de uso": null,
+            "CNC": { sistema: "Módulo CNC para Focus/Armarius" }
+        },
+        "Implementación": null,
+        "Capacitación": {
+            "Curso": null
+        }
+    },
+    "Winmaker": {
+        "Soporte": {
+            "Consulta General": null,
+            "Consulta de uso": null,
+            "CNC": { sistema: "Winmaker CNC" }
+        },
+        "Implementación": null,
+        "Capacitación": {
+            "Curso": null
+        }
+    },
+    "Leptonray": {
+        "Soporte": {
+            "Consulta General": null,
+            "Consulta de uso": null
+        },
+        "Capacitación": {
+            "Curso": null
+        }
+    },
+    "Lepton Optimizer": opcionesBaseLeptonOptimizer,
+    "Lepton Optimizer Web": opcionesBaseLeptonOptimizer,
+    "Administración": {
+        "Administrativa": {
+            "Consulta General": null,
+            "Cobranzas": null
+        },
+        "Ventas": null
+    },
+    "Claves": {}
+};
+
 
         function actualizarTipoCaso() {
             const temaSelect = document.getElementById("tema");
