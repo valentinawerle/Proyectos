@@ -30,7 +30,7 @@ function createStackItems(items, containerId) {
         const div = document.createElement('div');
         div.className = 'stack-item';
         div.innerHTML = `
-            <img src="${item.icon}" alt="${item.name}" />
+            <img src="${item.icon}" alt="${item.name}" class="stack-image"/>
             <span>${item.name}</span>
         `;
         container.appendChild(div);
