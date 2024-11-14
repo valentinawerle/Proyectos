@@ -7,105 +7,120 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-
 </head>
 <body>
     <a href="index.html" class="close-btn">&#10006;</a>
     <div class="container">
         <div class="search-container">
-            <input type="text" placeholder="buscador" class="search-input">
+            <input type="text" placeholder="buscador" class="search-input" oninput="filterCards()">
         </div>
 
         <h2>Seleccione el Formulario de su interés</h2>
-<div class="card-container">
-    <div class="card-row">
-        <div class="card">
-            <div class="icon">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Windows_icon_logo.png" alt="Icono Windows">
+        <div class="card-container">
+            <div class="card-row">
+                <div class="card">
+                    <div class="icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Windows_icon_logo.png" alt="Icono Windows">
+                    </div>
+                    <a href="winmaker.html" class="content">
+                        <h3>WinMaker</h3>
+                        <p>Mesa de ayuda para clientes con servicio post-venta...</p>
+                    </a>
+                    <div class="arrow">&#8250;</div>
+                </div>
+
+                <div class="card">
+                    <div class="icon">
+                        <i class="fa-solid fa-industry"></i>
+                    </div>
+                    <a href="leptonpack.html" class="content">
+                        <h3>Leptonpack</h3>
+                        <p>Mesa de ayuda para clientes con servicio post-venta...</p>
+                    </a>
+                    <div class="arrow">&#8250;</div>
+                </div>
             </div>
-            <a href="winmaker.html" class="content">
-                <h3>WinMaker</h3>
-                <p>Mesa de ayuda para clientes con servicio post-venta...</p>
-            </a>
-            <div class="arrow">&#8250;</div>
-        </div>
-        
-        <div class="card">
-            <div class="icon">
-                <i class="fa-solid fa-industry"></i>
+
+            <div class="card-row">
+                <div class="card">
+                    <div class="icon">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <a href="administracion.html" class="content">
+                        <h3>Administración</h3>
+                        <p>Solicitud de Clave</p>
+                    </a>
+                    <div class="arrow">&#8250;</div>
+                </div>
+
+                <div class="card">
+                    <div class="icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Windows_icon_logo.png" alt="Icono Lepton Optimizer">
+                    </div>
+                    <a href="leptonoptimizer.html" class="content">
+                        <h3>Lepton Optimizer</h3>
+                        <p>Mesa de ayuda para clientes con servicio post-venta...</p>
+                    </a>
+                    <div class="arrow">&#8250;</div>
+                </div>
             </div>
-            <a href="leptonpack.html" class="content">
-                <h3>Leptonpack</h3>
-                <p>Mesa de ayuda para clientes con servicio post-venta...</p>
-            </a>
-            <div class="arrow">&#8250;</div>
+
+            <div class="card-row">
+                <div class="card">
+                    <div class="icon">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <a href="gcad.html" class="content">
+                        <h3>Gcad</h3>
+                        <p>Mesa de ayuda para clientes con servicio post-venta...</p>
+                    </a>
+                    <div class="arrow">&#8250;</div>
+                </div>
+
+                <div class="card">
+                    <div class="icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Windows_icon_logo.png" alt="Icono Lepton Optimizer">
+                    </div>
+                    <a href="gplus.html" class="content">
+                        <h3>Gplus</h3>
+                        <p>Mesa de ayuda para clientes con servicio post-venta...</p>
+                    </a>
+                    <div class="arrow">&#8250;</div>
+                </div>
+            </div>    
+
+            <div class="card-container">
+                <div class="card">
+                    <div class="icon">
+                        <i class="fa-solid fa-key"></i>
+                    </div>        
+                    <a href="claves.html" class="content">
+                        <h3>Solicitud de clave</h3>
+                        <p>Completar el formulario para solicitar una clave.</p>
+                    </a>
+                    <div class="arrow">&#8250;</div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="card-row">
-        <div class="card">
-            <div class="icon">
-                <i class="fa-solid fa-key"></i>
-            </div>
-            <a href="administracion.html" class="content">
-                <h3>Administración</h3>
-                <p>Solicitud de Clave</p>
-            </a>
-            <div class="arrow">&#8250;</div>
-        </div>
-        
-        <div class="card">
-            <div class="icon">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Windows_icon_logo.png" alt="Icono Lepton Optimizer">
-            </div>
-            <a href="leptonoptimizer.html" class="content">
-                <h3>Lepton Optimizer</h3>
-                <p>Mesa de ayuda para clientes con servicio post-venta...</p>
-            </a>
-            <div class="arrow">&#8250;</div>
-        </div>
-    </div>
+    <script>
+        function filterCards() {
+            const searchInput = document.querySelector('.search-input').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
 
-    <div class="card-row">
-        <div class="card">
-            <div class="icon">
-                <i class="fa-solid fa-key"></i>
-            </div>
-            <a href="gcad.html" class="content">
-                <h3>Gcad</h3>
-                <p>Mesa de ayuda para clientes con servicio post-venta...</p>
-            </a>
-            <div class="arrow">&#8250;</div>
-        </div>
+            cards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
 
-        <div class="card">
-            <div class="icon">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Windows_icon_logo.png" alt="Icono Lepton Optimizer">
-            </div>
-            <a href="gplus.html" class="content">
-                <h3>Gplus</h3>
-                <p>Mesa de ayuda para clientes con servicio post-venta...</p>
-            </a>
-            <div class="arrow">&#8250;</div>
-        </div>
-    </div>    
+                if (title.includes(searchInput) || description.includes(searchInput)) {
+                    card.style.display = 'flex'; // Mostrar tarjeta si coincide
+                } else {
+                    card.style.display = 'none'; // Ocultar tarjeta si no coincide
+                }
+            });
+        }
+    </script>
 
-    <div class="card-container">
-        <div class="card">
-            <div class="icon">
-                <i class="fa-solid fa-key"></i>
-            </div>        
-            <a href="claves.html" class="content">
-                <h3>Solicitud de clave</h3>
-                <p>Completar el formulario para solicitar una clave.</p>
-            </a>
-            <div class="arrow">&#8250;</div>
-        </div>
-
-        
-    </div>
-</div>
-
-         
 </body>
 </html>
