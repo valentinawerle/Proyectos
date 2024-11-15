@@ -8,6 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/submit-form', async (req, res) => {
     const formData = req.body;
+    console.log(formData)
 
     try {
         // envia los datos al API de salesforce
