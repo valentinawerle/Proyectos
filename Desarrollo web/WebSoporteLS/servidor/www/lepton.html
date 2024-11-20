@@ -2,10 +2,10 @@
 <html lang="es">
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="../styles.css">
-
+    <link rel="stylesheet" href="styles.css">
     <style>
-          body {
+       
+    body {
         margin: 0;
         font-family: 'Roboto', sans-serif;
         background-color: #f0f2f5;
@@ -108,19 +108,34 @@
             font-size: 0.85rem; /* Reduce el tamaño de la fuente en el botón */
         }
     }
-    </style>
+
+
+
+</style>
+
+    
+    
 </head>
 <body>
-    <a href="../index.html" class="close-btn">&#10006;</a>
+
+    <a href="index.html" class="close-btn">&#10006;</a>
+
     <form action="http://localhost:3000/submit-form" method="POST">
-        <input type="hidden" name="orgid" value="00DHs000000QSJA">
-        <input type="hidden" name="retURL" value="https://www.lepton.com.ar/web/soporte/soporte-tecnico">
 
         <!-- Selección de Tema -->
         <label for="tema">Tema *</label>
         <select id="tema" name="tema" required onchange="actualizarTipoCaso()">
-            <option value="Winmaker">Gcad</option>
-        
+            <option value="">--Ninguno--</option>
+            <option value="Leptonpack - Focus3D">Leptonpack - Focus3D</option>
+            <option value="Leptonpack - Armarius 3D">Leptonpack - Armarius 3D</option>
+            <option value="Winmaker">Winmaker</option>
+            <option value="Leptonray">Leptonray</option>
+            <option value="Lepton Optimizer">Lepton Optimizer</option>
+            <option value="Lepton Optimizer Web">Lepton Optimizer Web</option>
+            <option value="Gcad">Gcad</option>
+            <option value="Gplus">Gplus</option>
+            <option value="Administración">Administración</option>
+            <option value="Claves">Claves</option>
         </select>
 
         <!-- Selección de Tipo de Caso -->
@@ -130,12 +145,12 @@
         </select>
 
         <!-- Selección de Motivo del Caso -->
-        <div id="motivoCasoDiv" style="display: none;">
-            <label for="reason">Motivo del caso *</label>
-            <select id="reason" name="reason">
-                <option value="">--Ninguno--</option>
-            </select>
-        </div>
+        <label for="reason">Motivo del caso *</label>
+        <select id="reason" name="reason" required onchange="actualizarSistema()">
+            <option value="">--Ninguno--</option>
+        </select>
+
+        
 
         <!-- Resto del formulario -->
         <label for="name">Nombre y apellido *</label>
@@ -146,15 +161,6 @@
 
         <label for="phone">Teléfono *</label>
         <input id="phone" name="phone" type="text" maxlength="40" required>
-
-        <label for="cuit">CUIT *</label>
-        <input id="cuit" name="cuit" type="text" placeholder="Ingrese su CUIT" required>
-        <small>(Si no sos de Argentina, ingresá tu código fiscal o de identificación tributaria de tu país)</small>
-
-        <label for="licencia">Número de licencia</label>
-        <input id="licencia" name="licencia" type="number">
-        <small>El Número de licencia puede encontrarlo en una etiqueta pegada en la llave de seguridad.</small>
-
 
         <label for="subject">Asunto *</label>
         <input id="subject" name="subject" type="text" maxlength="80" required>
@@ -167,10 +173,64 @@
 
     <script>
         const opciones = {
+            "Leptonpack - Focus3D": {
+                "Soporte": {
+                    "Consulta General": null,
+                    "Consulta de uso": null,
+                    "CNC": { sistema: "Módulo CNC para Focus/Armarius" }
+                },
+                "Implementación": null
+            },
+            "Leptonpack - Armarius 3D": {
+                "Soporte": {
+                    "Consulta General": null,
+                    "Consulta de uso": null,
+                    "CNC": { sistema: "Módulo CNC para Focus/Armarius" }
+                },
+                "Implementación": null,
+                "Capacitación": {
+                    "Curso": null
+                }
+            },
             "Winmaker": {
-                "Soporte": { "Consulta General": null, "Consulta de uso": null, "CNC": null },
-                "Capacitación": { "Curso": null }
-            }
+                "Soporte": {
+                    "Consulta General": null,
+                    "Consulta de uso": null,
+                    "CNC": { sistema: "Winmaker CNC" }
+                },
+                "Implementación": null,
+                "Capacitación": {
+                    "Curso": null
+                }
+            },
+            "Leptonray": {
+                "Soporte": {
+                    "Consulta General": null,
+                    "Consulta de uso": null
+                },
+                "Capacitación": {
+                    "Curso": null
+                }
+            },
+            "Lepton Optimizer": {
+                "Soporte": {
+                    "Consulta General": null,
+                    "Consulta de uso": null,
+                    "CNC": { sistema: "Lepton Optimizer CNC" }
+                },
+                "Implementación": null,
+                "Capacitación": {
+                    "Curso": null
+                }
+            },
+            "Administración": {
+                "Administrativa": {
+                    "Consulta General": null,
+                    "Cobranzas": null
+                },
+                "Ventas": null
+            },
+            "Claves": {}
         };
 
         function actualizarTipoCaso() {
@@ -178,12 +238,11 @@
             const tipoCasoSelect = document.getElementById("type");
             const motivoCasoSelect = document.getElementById("reason");
 
-            // Limpiar las opciones actuales
             tipoCasoSelect.innerHTML = '<option value="">--Ninguno--</option>';
             motivoCasoSelect.innerHTML = '<option value="">--Ninguno--</option>';
 
             const temaSeleccionado = temaSelect.value;
-            if (temaSeleccionado === "Winmaker" && opciones[temaSeleccionado]) {
+            if (temaSeleccionado && opciones[temaSeleccionado]) {
                 const tiposDeCaso = Object.keys(opciones[temaSeleccionado]);
                 tiposDeCaso.forEach(tipo => {
                     const option = document.createElement("option");
@@ -198,16 +257,12 @@
             const temaSelect = document.getElementById("tema").value;
             const tipoCasoSelect = document.getElementById("type").value;
             const motivoCasoSelect = document.getElementById("reason");
-            const motivoCasoDiv = document.getElementById("motivoCasoDiv");
 
-            // Limpiar las opciones de motivo y ocultar el div por defecto
             motivoCasoSelect.innerHTML = '<option value="">--Ninguno--</option>';
-            motivoCasoDiv.style.display = "none";
 
-            if (temaSelect === "Winmaker" && tipoCasoSelect) {
+            if (temaSelect && tipoCasoSelect && opciones[temaSelect][tipoCasoSelect]) {
                 const motivosDeCaso = opciones[temaSelect][tipoCasoSelect];
                 if (motivosDeCaso) {
-                    motivoCasoDiv.style.display = "block";
                     Object.keys(motivosDeCaso).forEach(motivo => {
                         const option = document.createElement("option");
                         option.value = motivo;
@@ -218,8 +273,6 @@
             }
         }
 
-        // Inicializar el formulario con las opciones de Winmaker
-        document.addEventListener("DOMContentLoaded", actualizarTipoCaso);
     </script>
 </body>
 </html>

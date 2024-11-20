@@ -25,7 +25,12 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-
+    label {
+        display: block;
+        margin: 15px 0 5px;
+        font-weight: 600;
+        color: #333;
+    }
 
     input, select, textarea {
         width: 100%;
@@ -108,14 +113,12 @@
 <body>
     <a href="../index.html" class="close-btn">&#10006;</a>
     <form action="http://localhost:3000/submit-form" method="POST">
-        <input type="hidden" name="orgid" value="00DHs000000QSJA">
-        <input type="hidden" name="retURL" value="https://www.lepton.com.ar/web/soporte/soporte-tecnico">
 
         <!-- Selección de Tema -->
         <label for="tema">Tema *</label>
         <select id="tema" name="tema" required onchange="actualizarTipoCaso()">
-            <option value="Winmaker">Winmaker</option>
-            <!-- Solo la opción de Winmaker está disponible -->
+            <option value="Winmaker">Gcad</option>
+        
         </select>
 
         <!-- Selección de Tipo de Caso -->
@@ -142,14 +145,14 @@
         <label for="phone">Teléfono *</label>
         <input id="phone" name="phone" type="text" maxlength="40" required>
 
-        <label for="licencia">Número de licencia</label>
-            <input id="licencia" name="licencia" type="number">
-            <small>El Número de licencia puede encontrarlo en una etiqueta pegada en la llave de seguridad.</small>
-
         <label for="cuit">CUIT *</label>
-            <input id="cuit" name="cuit" type="text" placeholder="Ingrese su CUIT" required>
-            <small>(Si no sos de Argentina, ingresá tu código fiscal o de identificación tributaria de tu país)</small>
-                
+        <input id="cuit" name="cuit" type="text" placeholder="Ingrese su CUIT" required>
+        <small>(Si no sos de Argentina, ingresá tu código fiscal o de identificación tributaria de tu país)</small>
+
+        <label for="licencia">Número de licencia</label>
+        <input id="licencia" name="licencia" type="number">
+        <small>El Número de licencia puede encontrarlo en una etiqueta pegada en la llave de seguridad.</small>
+
 
         <label for="subject">Asunto *</label>
         <input id="subject" name="subject" type="text" maxlength="80" required>
@@ -164,7 +167,6 @@
         const opciones = {
             "Winmaker": {
                 "Soporte": { "Consulta General": null, "Consulta de uso": null, "CNC": null },
-                "Implementación": null,
                 "Capacitación": { "Curso": null }
             }
         };
