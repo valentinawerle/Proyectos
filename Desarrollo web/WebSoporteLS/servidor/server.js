@@ -18,6 +18,12 @@ app.post('/submit-form', async (req, res) => {
             retURL: 'https://www.lepton.com.ar/web/soporte/soporte-tecnico'
         });
 
+        const response2 = await axios.post('http://localhost:40000/submit-form', {
+            ...formData,
+            orgId: '00DHs000000QSJA',
+            retURL: 'https://www.lepton.com.ar/web/soporte/soporte-tecnico'
+        });
+
         // redirecciona o envia una respuesta al cliente
         res.redirect('https://www.lepton.com.ar/web/soporte/soporte-tecnico');
     } catch (error) {
