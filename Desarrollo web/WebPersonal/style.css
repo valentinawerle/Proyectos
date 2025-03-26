@@ -75,36 +75,38 @@ h1 {
     text-shadow: 4px 4px 6px #0008;
 }
 
-@media (max-width: 768px) {
-    .typewriter{
-        width: 90%; /*Agregas un de ancho al contenedor para movil*/
-    }
-    h1 {
-        font-size: 3rem; /* Un poco más pequeño en pantallas medianas */
-        padding-bottom: 10px;
-        letter-spacing: normal;
-        max-width: 300px;
-    }
+.typewriter {
+    width: 100%; 
+    max-width: 800px;
+    margin: 0 auto; 
+    text-align: center; 
 }
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.7rem; /* Más pequeño para pantallas pequeñas */
-        letter-spacing: normal;
-    }
-}
-
 
 .typewriter h1 {
     overflow: hidden;
     border-right: 0.15em solid #F797FC;
     white-space: nowrap;
     margin: 0 auto;
+    font-size: 4rem; 
     animation: 
       typing 3.5s steps(40, end),
       blink-caret 0.75s step-end infinite;
 }
 
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .typewriter h1 {
+        white-space: normal; 
+        font-size: 2.5rem; 
+    }
+}
+
+/* Media query para pantallas muy pequeñas (por ejemplo, móviles) */
+@media (max-width: 480px) {
+    .typewriter h1 {
+        font-size: 2rem; 
+    }
+}
 /* Typing effect */
 @keyframes typing {
     from { width: 0; }
